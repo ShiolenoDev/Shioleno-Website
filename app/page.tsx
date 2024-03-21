@@ -31,8 +31,8 @@ export default function Home() {
       >
         <div className="absolute left-1/2 top-[60%] lg:top-[55%] transform -translate-x-1/2 -translate-y-1/2 w-full">
           <div className="text-white text-center flex flex-col justify-center items-center h-full mb-10 text-4xl md:text-6xl lg:space-y-10 tracking-widest">
-            <h1>SHIOLENO </h1>
-            <h1>INDUSTRIES, INC.</h1>
+            <h1>BESPOKE PERCISION</h1>
+            <h1>FABRICATION</h1>
           </div>
           <div className="w-full flex  items-center justify-center text-lg">
             <div className="flex flex-col items-center justify-center space-y-6 lg:flex-row lg:space-x-24 lg:space-y-0">
