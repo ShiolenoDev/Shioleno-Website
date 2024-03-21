@@ -8,11 +8,19 @@ export default function Home() {
         style={{ zIndex: 10 }}
       >
         <div className="lg:hidden">
-          <img src="/images/logo.svg" alt="Shioleno Logo" className="w-full" />
+          <img
+            src="/images/shioleno_full.svg"
+            alt="Shioleno Logo"
+            className="w-full"
+          />
         </div>
         <span className="order-2 lg:order-1 tracking-wider z-10">EST 1983</span>
         <div className="hidden lg:flex absolute left-1/2 top-10 transform -translate-x-1/2 -translate-y-1/2">
-          <img src="/images/logo.svg" alt="Shioleno Logo" className="w-full" />
+          <img
+            src="/images/shioleno_full.svg"
+            alt="Shioleno Logo"
+            className="w-full"
+          />
         </div>
         <span className="order-3 tracking-wider z-10">UNDER CONSTRUCTION</span>
       </header>
