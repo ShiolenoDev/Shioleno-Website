@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { ContactBox } from "@/components/contact-box";
 
 export default function Home() {
   return (
@@ -45,39 +46,3 @@ export default function Home() {
     </main>
   );
 }
-
-type ContactProps = {
-  contactInfo: typeof siteConfig.wood | typeof siteConfig.metal;
-  title: string;
-};
-
-const ContactBox = ({ contactInfo, title }: ContactProps) => {
-  return (
-    <div className="flex flex-col items-start text-left max-w-xs mx-auto text-white">
-      <span className="self-center font-bold text-lg mb-4">{title}</span>
-      <div className="grid grid-cols-[auto,1fr] gap-1 lg:gap-2 items-center">
-        <span className="font-semibold text-left">Phone:</span>
-        <a
-          href={`tel:${contactInfo.phone}`}
-          className="hover:text-gray-300 text-left"
-        >
-          {contactInfo.phone}
-        </a>
-        <span className="font-semibold text-left">Fax:</span>
-        <a
-          href={`tel:${contactInfo.fax}`}
-          className="hover:text-gray-300 text-left"
-        >
-          {contactInfo.fax}
-        </a>
-        <span className="font-semibold text-left">Email:</span>
-        <a
-          href={`mailto:${contactInfo.email}`}
-          className="hover:text-gray-300 text-left"
-        >
-          {contactInfo.email}
-        </a>
-      </div>
-    </div>
-  );
-};
