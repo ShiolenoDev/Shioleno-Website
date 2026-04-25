@@ -1,17 +1,17 @@
-import { PageHero } from '@/components/site/PageHero'
-import { ContactForm } from '@/components/site/ContactForm'
-import { contactInfo } from '@/lib/site-data'
-import { FadeIn } from '@/components/site/FadeIn'
-import { buildPageMetadata } from '@/lib/seo'
+import { PageHero } from "@/components/site/PageHero";
+import { ContactForm } from "@/components/site/ContactForm";
+import { contactInfo } from "@/lib/site-data";
+import { FadeIn } from "@/components/site/FadeIn";
+import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: 'Contact',
+  title: "Contact",
   description:
-    'Contact Shioleno Industries in Arlington, TX. Request a quote for casework, millwork, and fixtures — reliable timelines, controlled costs, nationwide support.',
-  path: '/contact'
-})
+    "Contact Shioleno Industries in Arlington, TX. Request a quote for casework, millwork, and fixtures — reliable timelines, controlled costs, nationwide support.",
+  path: "/contact",
+});
 
-export default function ContactPage () {
+export default function ContactPage() {
   return (
     <main id="main-content" className="flex-1">
       <PageHero
@@ -27,7 +27,9 @@ export default function ContactPage () {
                 <h2 className="text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
                   Contact
                 </h2>
-                <p className="mt-4 font-medium text-foreground/95">{contactInfo.company}</p>
+                <p className="mt-4 font-medium text-foreground/95">
+                  {contactInfo.company}
+                </p>
                 <p className="mt-3 text-sm leading-[1.75] text-muted-foreground sm:text-base">
                   {contactInfo.addressLine1}
                   <br />
@@ -36,7 +38,7 @@ export default function ContactPage () {
                 <p className="mt-5">
                   <a
                     className="text-foreground/95 transition-colors duration-500 hover:text-primary"
-                    href={`tel:${contactInfo.phone.replace(/-/g, '')}`}
+                    href={`tel:${contactInfo.phone.replace(/-/g, "")}`}
                   >
                     {contactInfo.phoneDisplay}
                   </a>
@@ -68,5 +70,5 @@ export default function ContactPage () {
         </div>
       </div>
     </main>
-  )
+  );
 }

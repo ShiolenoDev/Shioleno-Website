@@ -1,25 +1,25 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { ChevronDown } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { FadeIn } from '@/components/site/FadeIn'
+import Image from "next/image";
+import Link from "next/link";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { FadeIn } from "@/components/site/FadeIn";
 
 type IndustryTileProps = {
-  href: string
-  title: string
-  className?: string
-  index?: number
-  image?: { src: string; alt: string }
-}
+  href: string;
+  title: string;
+  className?: string;
+  index?: number;
+  image?: { src: string; alt: string };
+};
 
-export function IndustryTile ({
+export function IndustryTile({
   href,
   title,
   className,
   index = 0,
-  image
+  image,
 }: IndustryTileProps) {
-  const hasImage = Boolean(image)
+  const hasImage = Boolean(image);
 
   return (
     <FadeIn delayMs={index * 80} className="h-full">
@@ -27,12 +27,12 @@ export function IndustryTile ({
         href={href}
         scroll
         className={cn(
-          'group relative flex h-full min-h-[200px] flex-col justify-end overflow-hidden border border-border/60 shadow-sm',
-          'transition duration-500 ease-out hover:border-border hover:shadow-md',
-          'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/50',
-          !hasImage && 'min-h-[140px] bg-card',
-          hasImage && 'min-h-[220px] sm:min-h-[240px] lg:min-h-[260px]',
-          className
+          "group relative flex h-full min-h-[200px] flex-col justify-end overflow-hidden border border-border/60 shadow-sm",
+          "transition duration-500 ease-out hover:border-border hover:shadow-md",
+          "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/50",
+          !hasImage && "min-h-[140px] bg-card",
+          hasImage && "min-h-[220px] sm:min-h-[240px] lg:min-h-[260px]",
+          className,
         )}
       >
         {image ? (
@@ -53,8 +53,10 @@ export function IndustryTile ({
         <div className="relative z-[1] flex flex-col p-6">
           <span
             className={cn(
-              'text-xs font-medium uppercase tracking-[0.25em] transition duration-500',
-              hasImage ? 'text-foreground/95' : 'text-muted-foreground group-hover:text-foreground/90'
+              "text-xs font-medium uppercase tracking-[0.25em] transition duration-500",
+              hasImage
+                ? "text-foreground/95"
+                : "text-muted-foreground group-hover:text-foreground/90",
             )}
           >
             {title}
@@ -81,5 +83,5 @@ export function IndustryTile ({
         </div>
       </Link>
     </FadeIn>
-  )
+  );
 }

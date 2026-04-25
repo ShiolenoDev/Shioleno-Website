@@ -1,18 +1,18 @@
-import { IndustrySection } from '@/components/site/IndustrySection'
-import { IndustryTile } from '@/components/site/IndustryTile'
-import { PageHero } from '@/components/site/PageHero'
-import { FadeIn } from '@/components/site/FadeIn'
-import { whatWeDoCategories } from '@/lib/site-data'
-import { buildPageMetadata } from '@/lib/seo'
+import { IndustrySection } from "@/components/site/IndustrySection";
+import { IndustryTile } from "@/components/site/IndustryTile";
+import { PageHero } from "@/components/site/PageHero";
+import { FadeIn } from "@/components/site/FadeIn";
+import { whatWeDoCategories } from "@/lib/site-data";
+import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: 'What We Do',
+  title: "What We Do",
   description:
-    'Custom manufacturing for retail, healthcare, hospitality, and trade — engineered casework, millwork, and fixtures with national delivery and project support.',
-  path: '/what-we-do'
-})
+    "Custom manufacturing for retail, healthcare, hospitality, and trade — engineered casework, millwork, and fixtures with national delivery and project support.",
+  path: "/what-we-do",
+});
 
-export default function WhatWeDoPage () {
+export default function WhatWeDoPage() {
   return (
     <main id="main-content" className="flex-1">
       <PageHero
@@ -31,7 +31,10 @@ export default function WhatWeDoPage () {
               Jump to a category
             </p>
           </div>
-          <ul className="grid list-none gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4" role="list">
+          <ul
+            className="grid list-none gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4"
+            role="list"
+          >
             {whatWeDoCategories.map((c, i) => (
               <li key={c.id} className="h-full">
                 <IndustryTile
@@ -50,5 +53,5 @@ export default function WhatWeDoPage () {
         <IndustrySection key={c.id} category={c} variantIndex={i} />
       ))}
     </main>
-  )
+  );
 }
