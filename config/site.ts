@@ -3,10 +3,23 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "Shioleno Industries",
   url: "https://www.shiolenoindustries.com/",
-  description: `Shioleno Industries, with over 33 years in Arlington, Texas, specializes in custom kitchen cabinets, innovative display fixtures, and expert wood and metal fabrication. Discover our comprehensive manufacturing solutions in our expansive 260,000 sq. ft. facilities.`,
-  keywords: `Custom, kitchen, cabinets, Wood, fabrication, Metal, Shioleno Industries, manufacture, 
-  Display fixtures, Industrial metal, Specialty, store fixtures, Display manufacturing, display, Spray, flat line wood coatings, 
-  Industrial paint application, wood shelving, metal shelving, paint, shelving`,
+  description: `Nationwide manufacturing partner for custom casework, millwork, and fixtures across hospitality, healthcare, retail, and trade environments. Precision-built, engineered for scale.`,
+  /** Meta keywords: comma-separated; keep aligned with page topics for SEO */
+  keywords: [
+    'Shioleno Industries',
+    'custom casework',
+    'millwork',
+    'store fixtures',
+    'hospitality casegoods',
+    'healthcare millwork',
+    'retail fixtures',
+    'TFL',
+    'HPL',
+    'metal fabrication',
+    'manufacturing',
+    'Arlington Texas',
+    'nationwide distribution'
+  ].join(', '),
   mainNav: [],
   descriptions: {},
   metal: {
