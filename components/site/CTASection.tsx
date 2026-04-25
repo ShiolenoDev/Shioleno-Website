@@ -1,25 +1,25 @@
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 type CTASectionProps = {
-  className?: string
-  title?: string
-  buttonText?: string
-  href?: string
-}
+  className?: string;
+  title?: string;
+  buttonText?: string;
+  href?: string;
+};
 
-export function CTASection ({
+export function CTASection({
   className,
-  title = 'Ready to get started?',
-  buttonText = 'Contact us',
-  href = '/contact'
+  title = "Ready to get started?",
+  buttonText = "Contact us",
+  href = "/contact",
 }: CTASectionProps) {
   return (
     <div
       className={cn(
-        'border border-border/60 bg-card px-6 py-10 text-center shadow-sm sm:px-12 sm:py-12',
-        className
+        "border border-border/60 bg-card px-6 py-10 text-center shadow-sm sm:px-12 sm:py-12",
+        className,
       )}
     >
       {title ? (
@@ -33,5 +33,5 @@ export function CTASection ({
         </Button>
       </div>
     </div>
-  )
+  );
 }

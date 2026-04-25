@@ -1,11 +1,11 @@
-import { BackToTop } from '@/components/site/BackToTop'
-import { Header } from '@/components/site/Header'
-import { Footer } from '@/components/site/Footer'
+import { BackToTop } from "@/components/site/BackToTop";
+import { Header } from "@/components/site/Header";
+import { Footer } from "@/components/site/Footer";
 
-export default function SiteLayout ({
-  children
+export default function SiteLayout({
+  children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <div className="flex min-h-screen flex-col">
@@ -14,5 +14,5 @@ export default function SiteLayout ({
       <Footer />
       <BackToTop />
     </div>
-  )
+  );
 }

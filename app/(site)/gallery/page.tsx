@@ -1,16 +1,16 @@
 // import { GalleryGrid } from '@/components/site/GalleryGrid'
-import { PageHero } from '@/components/site/PageHero'
+import { PageHero } from "@/components/site/PageHero";
 // import { galleryItems } from '@/lib/site-data'
-import { buildPageMetadata } from '@/lib/seo'
+import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: 'Gallery',
+  title: "Gallery",
   description:
-    'Project gallery: hospitality, retail, healthcare, and trade environments — custom casework, millwork, and commercial fixtures from Shioleno Industries.',
-  path: '/gallery'
-})
+    "Project gallery: hospitality, retail, healthcare, and trade environments — custom casework, millwork, and commercial fixtures from Shioleno Industries.",
+  path: "/gallery",
+});
 
-export default function GalleryPage () {
+export default function GalleryPage() {
   return (
     <main id="main-content" className="flex-1">
       <PageHero
@@ -28,5 +28,5 @@ export default function GalleryPage () {
         </div>
       </section>
     </main>
-  )
+  );
 }

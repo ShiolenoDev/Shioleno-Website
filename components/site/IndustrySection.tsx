@@ -1,24 +1,28 @@
-import Image from 'next/image'
-import { CTASection } from '@/components/site/CTASection'
-import { FadeIn } from '@/components/site/FadeIn'
-import { SectionHeading } from '@/components/site/SectionHeading'
-import type { WhatWeDoCategory } from '@/lib/site-data'
-import { cn } from '@/lib/utils'
+import Image from "next/image";
+import { CTASection } from "@/components/site/CTASection";
+import { FadeIn } from "@/components/site/FadeIn";
+import { SectionHeading } from "@/components/site/SectionHeading";
+import type { WhatWeDoCategory } from "@/lib/site-data";
+import { cn } from "@/lib/utils";
 
 type IndustrySectionProps = {
-  category: WhatWeDoCategory
-  variantIndex: number
-  className?: string
-}
+  category: WhatWeDoCategory;
+  variantIndex: number;
+  className?: string;
+};
 
-export function IndustrySection ({ category, variantIndex, className }: IndustrySectionProps) {
+export function IndustrySection({
+  category,
+  variantIndex,
+  className,
+}: IndustrySectionProps) {
   return (
     <section
       id={category.id}
       className={cn(
-        'scroll-mt-28 py-24 last:pb-28 md:py-32',
-        variantIndex % 2 === 0 ? 'bg-background' : 'bg-card',
-        className
+        "scroll-mt-28 py-24 last:pb-28 md:py-32",
+        variantIndex % 2 === 0 ? "bg-background" : "bg-card",
+        className,
       )}
       aria-labelledby={`${category.id}-heading`}
     >
@@ -46,7 +50,10 @@ export function IndustrySection ({ category, variantIndex, className }: Industry
           </ul>
         </FadeIn>
         <FadeIn className="mt-12">
-          <ul className="grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-3 sm:gap-4" role="list">
+          <ul
+            className="grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-3 sm:gap-4"
+            role="list"
+          >
             {category.sectionImages.map((img) => (
               <li key={img.src}>
                 <div className="overflow-hidden rounded-xl border border-border/15 bg-muted/10 shadow-sm">
@@ -73,5 +80,5 @@ export function IndustrySection ({ category, variantIndex, className }: Industry
         </FadeIn>
       </div>
     </section>
-  )
+  );
 }

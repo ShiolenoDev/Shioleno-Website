@@ -1,15 +1,15 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { FadeIn } from '@/components/site/FadeIn'
-import { Button } from '@/components/ui/button'
-import { HomeDepartmentContactStrip } from '@/components/site/HomeDepartmentContactStrip'
-import { homeHeadline, homeSubheadline } from '@/lib/site-data'
-import { siteConfig } from '@/config/site'
-import { homeMetadata } from '@/lib/seo'
+import Image from "next/image";
+import Link from "next/link";
+import { FadeIn } from "@/components/site/FadeIn";
+import { Button } from "@/components/ui/button";
+import { HomeDepartmentContactStrip } from "@/components/site/HomeDepartmentContactStrip";
+import { homeHeadline, homeSubheadline } from "@/lib/site-data";
+import { siteConfig } from "@/config/site";
+import { homeMetadata } from "@/lib/seo";
 
-export const metadata = homeMetadata(siteConfig.description)
+export const metadata = homeMetadata(siteConfig.description);
 
-export default function Home () {
+export default function Home() {
   return (
     <main id="main-content" className="flex-1">
       <section
@@ -18,7 +18,7 @@ export default function Home () {
       >
         <div
           className="relative w-full"
-          style={{ marginLeft: 'calc(50% - 50vw)', width: '100vw' }}
+          style={{ marginLeft: "calc(50% - 50vw)", width: "100vw" }}
         >
           <div className="relative min-h-[min(64vh,820px)] w-full overflow-hidden sm:min-h-[min(70vh,900px)]">
             <Image
@@ -41,9 +41,7 @@ export default function Home () {
               <div className="container max-w-5xl px-4 pb-20 pt-20 sm:px-6 sm:pb-24 sm:pt-24 md:px-8 md:pb-32 md:pt-28">
                 <div className="max-w-3xl md:max-w-[42rem]">
                   <FadeIn>
-                    <h1
-                      className="font-display text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.02em] text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.5),0_4px_28px_rgba(0,0,0,0.35)] sm:text-5xl md:text-6xl lg:text-7xl"
-                    >
+                    <h1 className="font-display text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.02em] text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.5),0_4px_28px_rgba(0,0,0,0.35)] sm:text-5xl md:text-6xl lg:text-7xl">
                       {homeHeadline}
                     </h1>
                   </FadeIn>
@@ -86,8 +84,9 @@ export default function Home () {
                 Manufacturing at scale
               </h2>
               <p className="mt-5 text-sm leading-[1.75] text-muted-foreground sm:text-base">
-                Custom casework, millwork, and fixtures engineered for durability, precision, and
-                predictable delivery across hospitality, healthcare, retail, and trade.
+                Custom casework, millwork, and fixtures engineered for
+                durability, precision, and predictable delivery across
+                hospitality, healthcare, retail, and trade.
               </p>
               <div className="mt-8">
                 <Button asChild variant="link" className="h-auto p-0">
@@ -100,8 +99,8 @@ export default function Home () {
                 Get a quote
               </h2>
               <p className="mt-5 text-sm leading-[1.75] text-muted-foreground sm:text-base">
-                Share your project details and timeline — we will follow up to align scope, options,
-                and next steps.
+                Share your project details and timeline — we will follow up to
+                align scope, options, and next steps.
               </p>
               <div className="mt-8">
                 <Button asChild>
@@ -113,5 +112,5 @@ export default function Home () {
         </div>
       </section>
     </main>
-  )
+  );
 }

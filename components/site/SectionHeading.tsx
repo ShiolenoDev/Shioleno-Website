@@ -1,28 +1,28 @@
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
 type SectionHeadingProps = {
-  title: string
-  eyebrow?: string
-  className?: string
-  as?: 'h1' | 'h2' | 'h3'
-  align?: 'left' | 'center'
-  id?: string
-}
+  title: string;
+  eyebrow?: string;
+  className?: string;
+  as?: "h1" | "h2" | "h3";
+  align?: "left" | "center";
+  id?: string;
+};
 
-export function SectionHeading ({
+export function SectionHeading({
   title,
   eyebrow,
   className,
-  as: H = 'h2',
-  align = 'left',
-  id
+  as: H = "h2",
+  align = "left",
+  id,
 }: SectionHeadingProps) {
   return (
     <div
       className={cn(
-        'max-w-3xl',
-        align === 'center' && 'mx-auto text-center',
-        className
+        "max-w-3xl",
+        align === "center" && "mx-auto text-center",
+        className,
       )}
     >
       {eyebrow ? (
@@ -37,5 +37,5 @@ export function SectionHeading ({
         {title}
       </H>
     </div>
-  )
+  );
 }

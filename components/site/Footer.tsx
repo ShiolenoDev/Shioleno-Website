@@ -1,17 +1,17 @@
-import Link from 'next/link'
-import { contactInfo, navLinks } from '@/lib/site-data'
-import { cn } from '@/lib/utils'
+import Link from "next/link";
+import { contactInfo, navLinks } from "@/lib/site-data";
+import { cn } from "@/lib/utils";
 
 type FooterProps = {
-  className?: string
-}
+  className?: string;
+};
 
-export function Footer ({ className }: FooterProps) {
+export function Footer({ className }: FooterProps) {
   return (
     <footer
       className={cn(
-        'mt-auto border-t border-border/40 bg-card text-sm',
-        className
+        "mt-auto border-t border-border/40 bg-card text-sm",
+        className,
       )}
     >
       <div className="container grid max-w-6xl gap-14 py-20 md:grid-cols-2 md:gap-16 lg:grid-cols-3">
@@ -27,7 +27,7 @@ export function Footer ({ className }: FooterProps) {
           <p className="mt-4">
             <a
               className="text-foreground/90 transition-colors duration-500 hover:text-primary"
-              href={`tel:${contactInfo.phone.replace(/-/g, '')}`}
+              href={`tel:${contactInfo.phone.replace(/-/g, "")}`}
             >
               {contactInfo.phoneDisplay}
             </a>
@@ -95,5 +95,5 @@ export function Footer ({ className }: FooterProps) {
         Copyright © 2026 Shioleno Industries Inc. All Rights Reserved
       </div>
     </footer>
-  )
+  );
 }
