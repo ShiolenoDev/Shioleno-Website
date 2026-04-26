@@ -1,6 +1,6 @@
-// import { GalleryGrid } from '@/components/site/GalleryGrid'
+import { GalleryGrid } from "@/components/site/GalleryGrid";
 import { PageHero } from "@/components/site/PageHero";
-// import { galleryItems } from '@/lib/site-data'
+import { galleryItems } from "@/lib/site-data";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -19,12 +19,7 @@ export default function GalleryPage() {
       />
       <section className="bg-tile-section-wash">
         <div className="container max-w-6xl py-20 md:py-28">
-          <p className="text-center font-display text-2xl font-medium tracking-[-0.02em] text-muted-foreground sm:text-3xl">
-            In Progress
-          </p>
-          {/*
           <GalleryGrid items={galleryItems} />
-          */}
         </div>
       </section>
     </main>

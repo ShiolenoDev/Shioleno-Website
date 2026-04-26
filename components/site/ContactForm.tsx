@@ -63,7 +63,7 @@ type ContactFormProps = {
 };
 
 type Feedback = {
-  type: "success" | "error" | "progress";
+  type: "success" | "error";
   message: string;
 };
 
@@ -95,7 +95,6 @@ function ContactFeedbackDialog({
   if (!open) return null;
 
   const isSuccess = feedback.type === "success";
-  const isProgress = feedback.type === "progress";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -108,27 +107,21 @@ function ContactFeedbackDialog({
         role="alertdialog"
         aria-modal
         aria-labelledby="contact-form-feedback-title"
-        aria-describedby={isProgress ? undefined : "contact-form-feedback-desc"}
+        aria-describedby="contact-form-feedback-desc"
         className="relative z-10 w-full max-w-md rounded-xl border border-border/50 bg-card px-6 py-7 text-center shadow-lg sm:px-7"
       >
         <h2
           id="contact-form-feedback-title"
           className="font-display text-xl font-semibold leading-tight tracking-[-0.02em] text-foreground"
         >
-          {isProgress
-            ? "Development In Progress"
-            : isSuccess
-              ? "Message sent"
-              : "We could not send your message"}
+          {isSuccess ? "Message sent" : "We could not send your message"}
         </h2>
-        {isProgress ? null : (
-          <p
-            id="contact-form-feedback-desc"
-            className="mt-3 text-left text-sm leading-[1.65] text-muted-foreground sm:text-base"
-          >
-            {feedback.message}
-          </p>
-        )}
+        <p
+          id="contact-form-feedback-desc"
+          className="mt-3 text-left text-sm leading-[1.65] text-muted-foreground sm:text-base"
+        >
+          {feedback.message}
+        </p>
         <div className="mt-8 flex flex-wrap items-center justify-end gap-2">
           <Button
             ref={okButtonRef}
@@ -170,20 +163,45 @@ export function ContactForm({ className }: ContactFormProps) {
       email: form.email.trim(),
       phone: form.phone.trim(),
       message: form.message.trim(),
-      submittedAt: new Date().toISOString(),
     };
-    // Captured client-side for now; replace with `POST /api/contact` when email (e.g. Resend) is live
-    if (process.env.NODE_ENV === "development") {
-      console.log("[Contact] Captured submission:", payload);
-    }
     try {
-      await new Promise((r) => {
-        setTimeout(r, 450);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
+      let data: { ok?: boolean; message?: string } = {};
+      try {
+        data = (await res.json()) as { ok?: boolean; message?: string };
+      } catch {
+        setFeedback({
+          type: "error",
+          message:
+            "We could not read the server response. Please try again or email us directly.",
+        });
+        return;
+      }
+      if (!res.ok || !data.ok) {
+        setFeedback({
+          type: "error",
+          message:
+            data.message ||
+            "Something went wrong. Please try again or email us directly.",
+        });
+        return;
+      }
       setForm(initial);
       setFeedback({
-        type: "progress",
-        message: "",
+        type: "success",
+        message:
+          data.message ||
+          "Thanks for reaching out. We will get back to you soon.",
+      });
+    } catch {
+      setFeedback({
+        type: "error",
+        message:
+          "We could not reach the server. Check your connection and try again.",
       });
     } finally {
       setSending(false);

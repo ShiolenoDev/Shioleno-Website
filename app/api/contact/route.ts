@@ -1,4 +1,8 @@
 import { NextResponse } from 'next/server'
+import { Resend } from 'resend'
+import { siteConfig } from '@/config/site'
+import { buildContactEmailHtml } from '@/lib/contact-email-template'
+import { absoluteUrl, getSiteOrigin } from '@/lib/seo'
 import { contactInfo } from '@/lib/site-data'
 
 export const runtime = 'nodejs'
@@ -16,11 +20,32 @@ function isNonEmpty (s: unknown): s is string {
   return typeof s === 'string' && s.trim().length > 0
 }
 
+function buildEmailBody (p: {
+  firstName: string
+  lastName: string
+  company: string
+  email: string
+  phone: string
+  message: string
+}) {
+  const lines = [
+    'New message from the website contact form.',
+    '',
+    `Name: ${p.firstName} ${p.lastName}`,
+    `Email: ${p.email}`,
+    p.company ? `Company: ${p.company}` : null,
+    p.phone ? `Phone: ${p.phone}` : null,
+    '',
+    'Message:',
+    p.message
+  ].filter((x) => x !== null)
+  return lines.join('\n')
+}
+
 /**
- * TODO: When RESEND_API_KEY, CONTACT_TO_EMAIL, and CONTACT_FROM_EMAIL are set,
- * use Resend (or your mail provider) to send email from this API route.
- * Example: import { Resend } from 'resend'; const r = new Resend(process.env.RESEND_API_KEY); ...
- * Keep the same JSON contract so the ContactForm does not need changes.
+ * Set RESEND_API_KEY, CONTACT_TO_EMAIL, and CONTACT_FROM_EMAIL in .env.local.
+ * For a quick Resend test, set CONTACT_FROM_EMAIL to onboarding@resend.dev and
+ * CONTACT_TO_EMAIL to the address you use to sign in at resend.com.
  */
 export async function POST (request: Request) {
   let body: Partial<ContactPayload>
@@ -43,9 +68,40 @@ export async function POST (request: Request) {
   const from = process.env.CONTACT_FROM_EMAIL
   const canSend = Boolean(resendKey && to && from)
 
+  const payload = {
+    firstName: firstName.trim(),
+    lastName: lastName.trim(),
+    company: (company && typeof company === 'string' ? company : '').trim(),
+    email: email.trim(),
+    phone: (phone && typeof phone === 'string' ? phone : '').trim(),
+    message: message.trim()
+  }
+
   if (canSend) {
-    // TODO: const resend = new Resend(resendKey)
-    // await resend.emails.send({ from, to, subject: '...', text: '...' })
+    const resend = new Resend(resendKey)
+    const subject = `Website contact: ${payload.firstName} ${payload.lastName}`
+    const text = buildEmailBody(payload)
+    const logoUrl = process.env.CONTACT_LOGO_URL || absoluteUrl('/images/shioleno_full.svg')
+    const html = buildContactEmailHtml(payload, {
+      logoUrl,
+      siteName: siteConfig.name,
+      siteUrl: getSiteOrigin()
+    })
+    const { error } = await resend.emails.send({
+      from: from as string,
+      to: [to as string],
+      subject,
+      text,
+      html,
+      replyTo: payload.email
+    })
+    if (error) {
+      console.error('[contact]', error)
+      return NextResponse.json(
+        { ok: false, message: 'We could not send your message. Please try again or email us directly.' },
+        { status: 502 }
+      )
+    }
     return NextResponse.json({
       ok: true,
       message: 'Message received. We will get back to you soon.'
@@ -53,10 +109,11 @@ export async function POST (request: Request) {
   }
 
   if (process.env.NODE_ENV === 'development') {
+    console.info('[contact] (no Resend) would send:', { to, from: from || '(missing)', payload })
     return NextResponse.json({
       ok: true,
       message:
-        'Development: Resend is not configured (RESEND_API_KEY / CONTACT_FROM_EMAIL). Your message was accepted and logged server-side in dev only.'
+        'Development: Resend is not configured (set RESEND_API_KEY and CONTACT_FROM_EMAIL in .env.local). Your message was not emailed; it was only logged in the dev server console.'
     })
   }
 
