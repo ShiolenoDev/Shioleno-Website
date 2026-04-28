@@ -1,8 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Images } from "lucide-react";
 import { CTASection } from "@/components/site/CTASection";
 import { FadeIn } from "@/components/site/FadeIn";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import type { WhatWeDoCategory } from "@/lib/site-data";
+import { Button } from "@/components/ui/button";
+import { GALLERY_FILTER_QUERY_KEY, type WhatWeDoCategory } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 type IndustrySectionProps = {
@@ -28,12 +31,28 @@ export function IndustrySection({
     >
       <div className="container max-w-6xl">
         <FadeIn>
-          <SectionHeading
-            as="h2"
-            title={category.headline}
-            className="mb-8"
-            id={`${category.id}-heading`}
-          />
+          <div className="mb-8 flex flex-col gap-4 sm:gap-5 md:flex-row md:items-start md:justify-between md:gap-6 lg:gap-8">
+            <SectionHeading
+              as="h2"
+              title={category.headline}
+              className="mb-0 min-w-0 flex-1"
+              id={`${category.id}-heading`}
+            />
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="w-full min-w-0 shrink-0 sm:min-w-[220px] sm:w-auto"
+            >
+              <Link
+                href={`/millwork/gallery?${GALLERY_FILTER_QUERY_KEY}=${category.id}`}
+                className="inline-flex items-center justify-center gap-2"
+              >
+                <Images className="h-4 w-4 opacity-90" aria-hidden />
+                Go to gallery
+              </Link>
+            </Button>
+          </div>
         </FadeIn>
         <FadeIn className="mt-2">
           <p className="max-w-3xl text-base leading-[1.75] text-muted-foreground sm:text-lg">
@@ -71,11 +90,11 @@ export function IndustrySection({
             ))}
           </ul>
         </FadeIn>
-        <FadeIn className="mt-14">
+        <FadeIn className="mt-8">
           <CTASection
             title="Discuss this scope with our team"
             buttonText="Contact us"
-            href="/contact"
+            href="/millwork/contact"
           />
         </FadeIn>
       </div>

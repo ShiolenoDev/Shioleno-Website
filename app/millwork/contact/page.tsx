@@ -8,7 +8,7 @@ export const metadata = buildPageMetadata({
   title: "Contact",
   description:
     "Contact Shioleno Industries in Arlington, TX. Request a quote for casework, millwork, and fixtures — reliable timelines, controlled costs, nationwide support.",
-  path: "/contact",
+  path: "/millwork/contact",
 });
 
 export default function ContactPage() {

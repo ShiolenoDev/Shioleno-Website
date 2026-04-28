@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { GalleryGrid } from "@/components/site/GalleryGrid";
 import { PageHero } from "@/components/site/PageHero";
 import { galleryItems } from "@/lib/site-data";
@@ -7,7 +8,7 @@ export const metadata = buildPageMetadata({
   title: "Gallery",
   description:
     "Project gallery: hospitality, retail, healthcare, and trade environments — custom casework, millwork, and commercial fixtures from Shioleno Industries.",
-  path: "/gallery",
+  path: "/millwork/gallery",
 });
 
 export default function GalleryPage() {
@@ -19,7 +20,16 @@ export default function GalleryPage() {
       />
       <section className="bg-tile-section-wash">
         <div className="container max-w-6xl py-20 md:py-28">
-          <GalleryGrid items={galleryItems} />
+          <Suspense
+            fallback={
+              <div
+                className="h-12 max-w-md animate-pulse rounded-md bg-muted/40"
+                aria-hidden
+              />
+            }
+          >
+            <GalleryGrid items={galleryItems} />
+          </Suspense>
         </div>
       </section>
     </main>

@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { contactInfo, navLinks } from "@/lib/site-data";
+import { contactInfo, homeDepartmentContacts, metalNavLinks, navLinks } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 type FooterProps = {
-  className?: string;
-};
+  className?: string
+  /** Millwork site footer nav vs metal fabrication section */
+  variant?: 'millwork' | 'metal'
+}
 
-export function Footer({ className }: FooterProps) {
+export function Footer ({ className, variant = 'millwork' }: FooterProps) {
+  const navigateLinks = variant === 'metal' ? metalNavLinks : navLinks
+  const dept = variant === 'metal' ? homeDepartmentContacts[1] : homeDepartmentContacts[0]
   return (
     <footer
       className={cn(
@@ -27,17 +31,17 @@ export function Footer({ className }: FooterProps) {
           <p className="mt-4">
             <a
               className="text-foreground/90 transition-colors duration-500 hover:text-primary"
-              href={`tel:${contactInfo.phone.replace(/-/g, "")}`}
+              href={`tel:${dept.phoneTel}`}
             >
-              {contactInfo.phoneDisplay}
+              {dept.phoneDisplay}
             </a>
           </p>
           <p>
             <a
               className="text-foreground/90 transition-colors duration-500 hover:text-primary"
-              href={`mailto:${contactInfo.email}`}
+              href={`mailto:${dept.email}`}
             >
-              {contactInfo.email}
+              {dept.email}
             </a>
           </p>
           <p className="mt-1">
@@ -55,7 +59,7 @@ export function Footer({ className }: FooterProps) {
             Navigate
           </p>
           <ul className="mt-4 flex list-none flex-col gap-3" role="list">
-            {navLinks.map((l) => (
+            {navigateLinks.map((l) => (
               <li key={l.href}>
                 <Link
                   className="text-sm text-foreground/85 transition-colors duration-500 hover:text-primary"

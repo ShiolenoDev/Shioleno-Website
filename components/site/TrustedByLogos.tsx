@@ -22,23 +22,38 @@ export function TrustedByLogos ({ className }: TrustedByLogosProps) {
       aria-labelledby="trusted-by-heading"
     >
       <div className="bg-white">
-        <div className="container max-w-5xl px-5 py-14 sm:px-6 sm:py-16 md:py-20">
+        <div className="container max-w-5xl px-2.5 py-14 sm:px-5 sm:py-16 md:px-6 md:py-20">
           <ul
-            className="mx-auto flex list-none flex-wrap items-center justify-center gap-x-6 gap-y-10 p-0 sm:gap-x-10 sm:gap-y-12 md:gap-x-12"
+            className="mx-auto grid w-full list-none auto-rows-auto grid-cols-2 items-center justify-items-stretch justify-center gap-x-2 gap-y-7 p-0 sm:grid-cols-3 sm:gap-x-5 sm:gap-y-10 md:grid-cols-4 md:gap-x-8 md:gap-y-12 lg:grid-cols-5 lg:gap-x-10"
             role="list"
           >
-            {aboutPartnerLogos.map((logo) => (
+            {aboutPartnerLogos.map((logo, index) => (
               <li
                 key={logo.src}
-                className="flex h-[3.6rem] w-[9.6rem] items-center justify-center sm:h-[4.8rem] sm:w-48 md:h-24 md:w-[14.4rem]"
+                className="flex w-full min-w-0 items-center justify-center"
               >
-                <div className="relative h-full w-full">
+                <div
+                  className={cn(
+                    'relative w-full',
+                    index === 0 ? 'h-32' : 'h-32 md:h-24',
+                    index === 0 && 'z-[1]',
+                  )}
+                  style={
+                    index === 0
+                      ? { transform: 'scale(1.2)', transformOrigin: 'center' }
+                      : undefined
+                  }
+                >
                   <Image
                     src={logo.src}
                     alt={logo.alt}
                     fill
                     className="object-contain object-center"
-                    sizes="(max-width: 640px) 10rem, (max-width: 768px) 12rem, 15rem"
+                    sizes={
+                      index === 0
+                        ? '(max-width: 768px) 55vw, (max-width: 1024px) 26vw, 19rem'
+                        : '(max-width: 768px) 40vw, (max-width: 1024px) 20vw, 16rem'
+                    }
                   />
                 </div>
               </li>

@@ -3,12 +3,18 @@ export type NavLink = {
   href: string
 }
 
+/** Millwork section primary navigation (all paths under `/millwork`). */
 export const navLinks: NavLink[] = [
-  { label: 'Home', href: '/' },
-  { label: 'What We Do', href: '/what-we-do' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' }
+  { label: 'Home', href: '/millwork' },
+  { label: 'What We Do', href: '/millwork/what-we-do' },
+  { label: 'Gallery', href: '/millwork/gallery' },
+  { label: 'About', href: '/millwork/about' },
+  { label: 'Contact', href: '/millwork/contact' }
+]
+
+/** Metal fabrication section — expand as new routes are added. */
+export const metalNavLinks: NavLink[] = [
+  { label: 'Home', href: '/metal' }
 ]
 
 export type WhatWeDoSectionImage = { src: string; alt: string }
@@ -55,8 +61,9 @@ export const whatWeDoCategories: WhatWeDoCategory[] = [
         alt: 'Retail cashwrap, checkout counter, and front-of-store transaction area.'
       },
       {
-        src: '/images/gallery/retail/video-game-store-checkout-cashwrap.png',
-        alt: 'Specialty retail store checkout, cashwrap, and service counter.'
+        src: '/images/gallery/retail/commercial-retail-millwork-installation.png',
+        alt:
+          'Commercial retail install with custom black casework, glass display cases, and slatwall merchandising on counter and tall units.'
       }
     ]
   },
@@ -84,8 +91,9 @@ export const whatWeDoCategories: WhatWeDoCategory[] = [
         alt: 'Medical office reception desk, waiting, and public circulation millwork.'
       },
       {
-        src: '/images/gallery/healthcare/medical-exam-room-casework.png',
-        alt: 'Medical exam room with clinical casework and exam millwork.'
+        src: '/images/gallery/healthcare/hta-cabinets-nurse-station.jpg',
+        alt:
+          'Healthcare nurse station with L-shaped counter, white casework, tall storage, and integrated workstation with grey countertops.',
       },
       {
         src: '/images/gallery/healthcare/arista-advanced-pet-care-clinic.jpg',
@@ -113,12 +121,14 @@ export const whatWeDoCategories: WhatWeDoCategory[] = [
     },
     sectionImages: [
       {
-        src: '/images/gallery/hospitality/extended-stay-america-lobby.png',
-        alt: 'Extended-stay hotel lobby, reception, and public circulation millwork.'
+        src: '/images/gallery/hospitality/g6-motel-lobby-reception.png',
+        alt:
+          'Motel 6 lobby with reception desk, brand feature wall, coffee station, and built-in seating with millwork and casework.'
       },
       {
-        src: '/images/gallery/hospitality/hotel-lobby-reception-desk.png',
-        alt: 'Hotel front desk, lobby millwork, and guest reception feature.'
+        src: '/images/gallery/hospitality/hawthorn-suites-red-accent-studio.png',
+        alt:
+          'Hawthorn Suites studio guest room with integrated headboard millwork, kitchenette, living area, and red accent furniture.'
       },
       {
         src: '/images/gallery/hospitality/ramada-guest-room.png',
@@ -243,7 +253,7 @@ export const aboutPartnerLogos: PartnerLogo[] = [
   { src: '/images/partner-logos/h.png', alt: 'Hilton' },
   { src: '/images/partner-logos/hawthorn.png', alt: 'Hawthorn Suites' },
   { src: '/images/partner-logos/howardjohnson.png', alt: 'Howard Johnson' },
-  { src: '/images/partner-logos/jdm.png', alt: 'JDM' },
+  { src: '/images/partner-logos/motel6.png', alt: 'Motel 6' },
   { src: '/images/partner-logos/rallyhouse.png', alt: 'Rally House' },
   { src: '/images/partner-logos/ramada.png', alt: 'Ramada' },
   { src: '/images/partner-logos/reece.png', alt: 'Reece' },
@@ -257,6 +267,27 @@ export const aboutPartnerLogos: PartnerLogo[] = [
 ]
 
 export type GalleryCategory = 'hospitality' | 'retail' | 'healthcare' | 'trade'
+
+/** Query key for /gallery?filter=... — sync with WhatWeDoCategory ids. */
+export const GALLERY_FILTER_QUERY_KEY = 'filter' as const
+
+const GALLERY_CATEGORY_SLUGS: readonly GalleryCategory[] = [
+  'hospitality',
+  'retail',
+  'healthcare',
+  'trade'
+]
+
+export function parseGalleryFilterParam (
+  value: string | null | undefined
+): GalleryCategory | 'all' {
+  if (value === null || value === undefined || value === '') return 'all'
+  const v = value.trim().toLowerCase()
+  if (v === 'all') return 'all'
+  return (GALLERY_CATEGORY_SLUGS as readonly string[]).includes(v)
+    ? (v as GalleryCategory)
+    : 'all'
+}
 
 export type GalleryItem = {
   id: string
@@ -436,20 +467,36 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: 'g-24',
+    category: 'healthcare',
+    title: 'HTA — nurse station and casework',
+    description:
+      'L-shaped healthcare reception, floor-to-ceiling storage, and integrated workstation with clinical millwork.',
+    imageSrc: '/images/gallery/healthcare/hta-cabinets-nurse-station.jpg'
+  },
+  {
+    id: 'g-25',
+    category: 'healthcare',
+    title: 'HTA — hallway and reception',
+    description:
+      'Reception millwork, corridor circulation, and built-in back-office support in a healthcare facility.',
+    imageSrc: '/images/gallery/healthcare/hta-hallway-reception.jpg'
+  },
+  {
+    id: 'g-26',
     category: 'trade',
     title: 'Industrial trade — checkout counter',
     description: 'Trade and industrial service counter and customer checkout line.',
     imageSrc: '/images/gallery/trade/industrial-trade-checkout-counter.png'
   },
   {
-    id: 'g-25',
+    id: 'g-27',
     category: 'trade',
     title: 'Trade — desk and sales area',
     description: 'Trade center sales environment with primary service desk and floor plan.',
     imageSrc: '/images/gallery/trade/trade-desk-and-sales-area.png'
   },
   {
-    id: 'g-26',
+    id: 'g-28',
     category: 'trade',
     title: 'Trade showroom — service counter',
     description: 'Showroom and trade counter for industrial and trade customers.',
@@ -503,6 +550,42 @@ export const homeDepartmentContacts: [HomeDepartmentContact, HomeDepartmentConta
     title: 'Metal fabrication',
     phoneTel: '8174659361',
     phoneDisplay: '(817) 465-9361',
+    email: 'sii2013@hotmail.com'
+  }
+]
+
+export type SplitLandingDepartment = {
+  id: 'wood' | 'metal'
+  title: string
+  /** Destination when the panel heading or block is activated */
+  href: string
+  phoneTel: string
+  phoneDisplay: string
+  faxDisplay: string
+  email: string
+}
+
+/**
+ * Root landing split — matches legacy division lines (wood millwork vs metal).
+ * Headlines link to `/millwork` and `/metal`.
+ */
+export const splitLandingDepartments: [SplitLandingDepartment, SplitLandingDepartment] = [
+  {
+    id: 'wood',
+    title: 'Millwork fabrication',
+    href: '/millwork',
+    phoneTel: '8175579365',
+    phoneDisplay: '(817) 557 9365',
+    faxDisplay: '(817) 557-9495',
+    email: 'shioleno@swbell.net'
+  },
+  {
+    id: 'metal',
+    title: 'Metal fabrication',
+    href: '/metal',
+    phoneTel: '8174659361',
+    phoneDisplay: '(817) 465 9361',
+    faxDisplay: '(817) 465-9364',
     email: 'sii2013@hotmail.com'
   }
 ]

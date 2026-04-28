@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/site/FadeIn";
+import { WhatWeDoHashLink } from "@/components/site/WhatWeDoHashLink";
 
 type IndustryTileProps = {
   href: string;
@@ -23,9 +23,8 @@ export function IndustryTile({
 
   return (
     <FadeIn delayMs={index * 80} className="h-full">
-      <Link
+      <WhatWeDoHashLink
         href={href}
-        scroll
         className={cn(
           "group relative flex h-full min-h-[200px] flex-col justify-end overflow-hidden border border-border/60 shadow-sm",
           "transition duration-500 ease-out hover:border-border hover:shadow-md",
@@ -72,7 +71,7 @@ export function IndustryTile({
           </span>
           {hasImage ? (
             <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.2em] text-foreground/80">
-              <span aria-hidden>Scroll</span>
+              <span aria-hidden>Gallery</span>
               <ChevronDown
                 className="h-4 w-4 text-foreground/85"
                 strokeWidth={2.25}
@@ -81,7 +80,7 @@ export function IndustryTile({
             </span>
           ) : null}
         </div>
-      </Link>
+      </WhatWeDoHashLink>
     </FadeIn>
   );
 }

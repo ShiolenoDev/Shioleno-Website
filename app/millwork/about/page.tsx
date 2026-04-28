@@ -21,8 +21,8 @@ const aboutEngineeredDurabilityImages: Array<{
   height: number;
 }> = [
   {
-    src: "/images/about-engineered-durability-1.png",
-    alt: "Inside a professional woodworking facility with advanced machines, stacked panels, and team members at work.",
+    src: "/images/about-what-sets-us-apart.png",
+    alt: "Automated production line with a large wood panel on a roller conveyor, yellow safety fencing, and industrial equipment in a modern manufacturing facility.",
     width: 684,
     height: 424,
   },
@@ -34,7 +34,7 @@ const aboutEngineeredDurabilityImages: Array<{
   },
   {
     src: "/images/about-engineered-durability-3.png",
-    alt: "Spacious manufacturing floor with heavy machinery, yellow overhead crane beam, and red structural steel.",
+    alt: "HOMAG industrial woodworking line with panels on a roller conveyor, overhead dust collection, and wire safety fencing in a production facility.",
     width: 682,
     height: 600,
   },
@@ -56,8 +56,24 @@ const aboutManufacturingAdvantageImages = aboutEngineeredDurabilityImages.slice(
   0,
   2,
 );
-const aboutEngineeredDurabilityOnlyImages =
-  aboutEngineeredDurabilityImages.slice(2);
+const aboutEngineeredForDurabilityFirstImage: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+} = {
+  src: "/images/about-engineered-durability-1.png",
+  alt:
+    "High-angle view of a manufacturing plant floor with large processing equipment, overhead ductwork, red structural steel, and industrial lighting.",
+  width: 684,
+  height: 424,
+};
+const aboutEngineeredDurabilityOnlyImages = [
+  aboutEngineeredForDurabilityFirstImage,
+  ...aboutEngineeredDurabilityImages.slice(2).filter(
+    (image) => image.src !== "/images/about-engineered-durability-3.png",
+  ),
+];
 
 const aboutExecutionImages: Array<{
   src: string;
@@ -83,7 +99,7 @@ export const metadata = buildPageMetadata({
   title: "About",
   description:
     "Over 40 years of precision casework, millwork, and fixtures. Engineering depth, advanced production, and scalable U.S. manufacturing for national programs.",
-  path: "/about",
+  path: "/millwork/about",
 });
 
 function BulletList({
@@ -154,17 +170,19 @@ export default function AboutPage () {
           <AboutSectionDivider />
 
           <section aria-labelledby="what-sets-us-apart">
-            <div className="grid gap-8 md:grid-cols-[minmax(0,240px)_1fr] md:items-start md:gap-10 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-12">
+            <div className="grid gap-8 md:grid-cols-2 md:items-start md:gap-10 lg:gap-12">
               <FadeIn>
-                <figure className="mx-auto w-full max-w-sm lg:mx-0 lg:max-w-none">
-                  <div className="relative aspect-[560/532] w-full overflow-hidden rounded-xl border border-border/20 bg-muted/15 shadow-sm">
-                    <Image
-                      src="/images/about-what-sets-us-apart.png"
-                      alt="Automated production line with a large wood-veneer panel on a conveyor, yellow safety fencing, and industrial equipment in a modern facility."
-                      fill
-                      className="object-cover object-center"
-                      sizes="(max-width: 767px) 100vw, 280px"
-                    />
+                <figure className="w-full">
+                  <div className="overflow-hidden rounded-xl border border-border/20 bg-white shadow-sm">
+                    <div className="relative aspect-[4/3] w-full sm:aspect-[3/2]">
+                      <Image
+                        src={aboutEngineeredDurabilityImages[2].src}
+                        alt={aboutEngineeredDurabilityImages[2].alt}
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 767px) 100vw, 50vw"
+                      />
+                    </div>
                   </div>
                 </figure>
               </FadeIn>
@@ -259,19 +277,22 @@ export default function AboutPage () {
             </FadeIn>
             <FadeIn delayMs={50}>
               <ul
-                className="grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-3 sm:gap-4"
+                className="grid list-none grid-cols-1 gap-3 p-0 sm:gap-4 md:grid-cols-2 lg:grid-cols-3"
                 role="list"
               >
-                {aboutEngineeredDurabilityOnlyImages.map((image) => (
-                  <li key={image.src}>
+                {aboutEngineeredDurabilityOnlyImages.map((image, index) => (
+                  <li
+                    key={`${image.src}-engineered-durability-${String(index)}`}
+                    className="min-w-0"
+                  >
                     <div className="overflow-hidden rounded-xl border border-border/20 bg-white shadow-sm">
-                      <div className="relative aspect-[4/3] w-full">
+                      <div className="relative aspect-[4/3] w-full min-h-0">
                         <Image
                           src={image.src}
                           alt={image.alt}
                           fill
                           className="object-cover object-center"
-                          sizes="(max-width: 639px) 100vw, 33vw"
+                          sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                         />
                       </div>
                     </div>
@@ -417,7 +438,7 @@ export default function AboutPage () {
             <FadeIn>
               <CTASection
                 title="Start a project conversation"
-                href="/contact"
+                href="/millwork/contact"
                 buttonText="Contact us"
               />
             </FadeIn>

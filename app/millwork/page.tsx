@@ -2,12 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/site/FadeIn";
 import { Button } from "@/components/ui/button";
-import { HomeDepartmentContactStrip } from "@/components/site/HomeDepartmentContactStrip";
 import { homeHeadline, homeSubheadline } from "@/lib/site-data";
 import { siteConfig } from "@/config/site";
-import { homeMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = homeMetadata(siteConfig.description);
+export const metadata = buildPageMetadata({
+  title: "Millwork & Casework",
+  description: siteConfig.description,
+  path: "/millwork",
+});
 
 export default function Home() {
   return (
@@ -56,7 +59,7 @@ export default function Home() {
                       size="lg"
                       className="min-w-[180px] border-0 bg-white text-foreground uppercase tracking-[0.1em] shadow-md hover:bg-white/90"
                     >
-                      <Link href="/what-we-do">What we do</Link>
+                      <Link href="/millwork/what-we-do">What we do</Link>
                     </Button>
                     <Button
                       asChild
@@ -64,7 +67,7 @@ export default function Home() {
                       size="lg"
                       className="min-w-[180px] border-white bg-transparent uppercase tracking-[0.1em] text-white hover:border-white hover:bg-white/10 hover:text-white"
                     >
-                      <Link href="/contact">Contact us</Link>
+                      <Link href="/millwork/contact">Contact us</Link>
                     </Button>
                   </FadeIn>
                 </div>
@@ -73,9 +76,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <FadeIn>
-        <HomeDepartmentContactStrip />
-      </FadeIn>
       <section className="bg-tile-section-wash">
         <div className="container max-w-5xl py-20 md:py-28">
           <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
@@ -90,7 +90,7 @@ export default function Home() {
               </p>
               <div className="mt-8">
                 <Button asChild variant="link" className="h-auto p-0">
-                  <Link href="/about">About our approach</Link>
+                  <Link href="/millwork/about">About our approach</Link>
                 </Button>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function Home() {
               </p>
               <div className="mt-8">
                 <Button asChild>
-                  <Link href="/contact">Start the conversation</Link>
+                  <Link href="/millwork/contact">Start the conversation</Link>
                 </Button>
               </div>
             </div>

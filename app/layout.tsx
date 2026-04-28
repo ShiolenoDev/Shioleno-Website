@@ -55,7 +55,7 @@ export default function RootLayout ({
   return (
     <html
       lang="en"
-      className={cn("scroll-smooth", fontSans.variable)}
+      className={cn("scroll-auto md:scroll-smooth", fontSans.variable)}
     >
       <body
         className={cn(

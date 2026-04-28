@@ -84,10 +84,10 @@ export function buildPageMetadata ({
   }
 }
 
-/** Home: unique absolute title; full URL is canonical / */
-export function homeMetadata (description: string): Metadata {
+/** Root split landing (`/`) — millwork vs metal entry */
+export function splitLandingMetadata (description: string): Metadata {
   const title =
-    'Shioleno Industries | Custom Casework, Millwork & Fixtures'
+    'Shioleno Industries | Millwork & Metal Fabrication | Arlington, TX'
   const url = absoluteUrl('/')
   const images = [
     {

@@ -128,7 +128,7 @@ export function buildContactEmailHtml (
             <p class="shioleno-foot" style="margin:0;padding:16px 0 0 0;border-top:1px solid ${border};font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;line-height:1.5;color:${muted};text-align:center;">
               <a class="shioleno-a" href="${e(options.siteUrl)}/" style="color:${accent};text-decoration:none;font-weight:600;">${e(options.siteName)}</a>
               <span class="shioleno-sep" style="color:${border};"> · </span>
-              <a class="shioleno-a-muted" href="${e(options.siteUrl)}/contact" style="color:${muted};text-decoration:underline;">Contact page</a>
+              <a class="shioleno-a-muted" href="${e(options.siteUrl)}/millwork/contact" style="color:${muted};text-decoration:underline;">Contact page</a>
             </p>
           </td>
         </tr>

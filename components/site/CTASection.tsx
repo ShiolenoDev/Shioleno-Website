@@ -13,7 +13,7 @@ export function CTASection({
   className,
   title = "Ready to get started?",
   buttonText = "Contact us",
-  href = "/contact",
+  href = "/millwork/contact",
 }: CTASectionProps) {
   return (
     <div

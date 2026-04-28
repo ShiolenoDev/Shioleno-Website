@@ -1,11 +1,18 @@
 'use client'
 
 import Image from 'next/image'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { FadeIn } from '@/components/site/FadeIn'
-import { galleryCategoryLabels, type GalleryCategory, type GalleryItem } from '@/lib/site-data'
+import {
+  GALLERY_FILTER_QUERY_KEY,
+  galleryCategoryLabels,
+  parseGalleryFilterParam,
+  type GalleryCategory,
+  type GalleryItem
+} from '@/lib/site-data'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 
@@ -23,7 +30,29 @@ type GalleryGridProps = {
 }
 
 export function GalleryGrid ({ items, className }: GalleryGridProps) {
-  const [active, setActive] = useState<GalleryCategory | 'all'>('all')
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const active = useMemo(
+    () => parseGalleryFilterParam(searchParams.get(GALLERY_FILTER_QUERY_KEY)),
+    [searchParams]
+  )
+
+  const setFilter = useCallback(
+    (id: GalleryCategory | 'all') => {
+      const params = new URLSearchParams(searchParams.toString())
+      if (id === 'all') {
+        params.delete(GALLERY_FILTER_QUERY_KEY)
+      } else {
+        params.set(GALLERY_FILTER_QUERY_KEY, id)
+      }
+      const q = params.toString()
+      router.replace(q ? `${pathname}?${q}` : pathname, { scroll: false })
+    },
+    [pathname, router, searchParams]
+  )
+
   const [lightbox, setLightbox] = useState<GalleryItem | null>(null)
   const [mounted, setMounted] = useState(false)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
@@ -200,7 +229,7 @@ export function GalleryGrid ({ items, className }: GalleryGridProps) {
             size="sm"
             className="!text-xs"
             onClick={() => {
-              setActive(t.id)
+              setFilter(t.id)
             }}
           >
             {t.label}

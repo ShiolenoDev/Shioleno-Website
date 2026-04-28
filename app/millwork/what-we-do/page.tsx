@@ -9,7 +9,7 @@ export const metadata = buildPageMetadata({
   title: "What We Do",
   description:
     "Custom manufacturing for retail, healthcare, hospitality, and trade — engineered casework, millwork, and fixtures with national delivery and project support.",
-  path: "/what-we-do",
+  path: "/millwork/what-we-do",
 });
 
 export default function WhatWeDoPage() {
@@ -38,7 +38,7 @@ export default function WhatWeDoPage() {
             {whatWeDoCategories.map((c, i) => (
               <li key={c.id} className="h-full">
                 <IndustryTile
-                  href={`/what-we-do#${c.id}`}
+                  href={`/millwork/what-we-do#${c.id}`}
                   title={c.title}
                   index={i}
                   className="h-full w-full"
