@@ -1,11 +1,18 @@
-import { NextResponse } from 'next/server'
-import { Resend } from 'resend'
-import { siteConfig } from '@/config/site'
-import { buildContactEmailHtml } from '@/lib/contact-email-template'
-import { absoluteUrl, getSiteOrigin } from '@/lib/seo'
-import { contactInfo } from '@/lib/site-data'
+import { NextResponse } from "next/server"
+import { Resend } from "resend"
+import { siteConfig } from "@/config/site"
+import { buildContactEmailHtml } from "@/lib/contact-email-template"
+import {
+  CONTACT_MIN_FORM_MS,
+  getClientIp,
+  isHoneypotTripped,
+  isTooFast,
+  tryConsumeRateLimit,
+} from "@/lib/contact-spam-guards"
+import { absoluteUrl, getSiteOrigin } from "@/lib/seo"
+import { contactInfo } from "@/lib/site-data"
 
-export const runtime = 'nodejs'
+export const runtime = "nodejs"
 
 type ContactPayload = {
   firstName: string
@@ -14,7 +21,14 @@ type ContactPayload = {
   email: string
   phone: string
   message: string
+  websiteUrl?: string
+  formStartedAt?: number
 }
+
+const SILENT_OK_RESPONSE = NextResponse.json({
+  ok: true,
+  message: "Message received. We will get back to you soon.",
+})
 
 function isNonEmpty (s: unknown): s is string {
   return typeof s === 'string' && s.trim().length > 0
@@ -52,7 +66,27 @@ export async function POST (request: Request) {
   try {
     body = await request.json()
   } catch {
-    return NextResponse.json({ ok: false, message: 'Invalid JSON body' }, { status: 400 })
+    return NextResponse.json(
+      { ok: false, message: "Invalid JSON body" },
+      { status: 400 },
+    )
+  }
+
+  const { websiteUrl, formStartedAt } = body
+
+  if (isHoneypotTripped(websiteUrl)) {
+    return SILENT_OK_RESPONSE
+  }
+
+  const isDev = process.env.NODE_ENV === "development"
+  if (isTooFast(formStartedAt, { isDev })) {
+    return NextResponse.json(
+      {
+        ok: false,
+        message: `Please wait at least ${Math.ceil(CONTACT_MIN_FORM_MS / 1000)} seconds before sending so we know you are human.`,
+      },
+      { status: 400 },
+    )
   }
 
   const { firstName, lastName, company, email, phone, message } = body
@@ -60,6 +94,18 @@ export async function POST (request: Request) {
     return NextResponse.json(
       { ok: false, message: 'Missing required fields' },
       { status: 400 }
+    )
+  }
+
+  const ip = getClientIp(request)
+  if (!tryConsumeRateLimit(ip)) {
+    return NextResponse.json(
+      {
+        ok: false,
+        message:
+          "Too many submissions from this network. Please try again later.",
+      },
+      { status: 429 },
     )
   }
 

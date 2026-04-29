@@ -86,7 +86,8 @@ export default function Home() {
               <p className="mt-5 text-sm leading-[1.75] text-muted-foreground sm:text-base">
                 Custom casework, millwork, and fixtures engineered for
                 durability, precision, and predictable delivery across
-                hospitality, healthcare, retail, and trade.
+                hospitality, healthcare, retail, commercial trade, and special
+                projects.
               </p>
               <div className="mt-8">
                 <Button asChild variant="link" className="h-auto p-0">

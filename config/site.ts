@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "Shioleno Industries",
   url: "https://www.shiolenoindustries.com/",
-  description: `Nationwide manufacturing partner for custom casework, millwork, and fixtures across hospitality, healthcare, retail, and trade environments. Precision-built, engineered for scale.`,
+  description: `Nationwide manufacturing partner for custom casework, millwork, and fixtures across hospitality, healthcare, retail, and commercial trade environments — including special projects. Precision-built, engineered for scale.`,
   /** Meta keywords: comma-separated; keep aligned with page topics for SEO */
   keywords: [
     'Shioleno Industries',

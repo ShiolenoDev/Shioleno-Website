@@ -2,13 +2,13 @@ import { IndustrySection } from "@/components/site/IndustrySection";
 import { IndustryTile } from "@/components/site/IndustryTile";
 import { PageHero } from "@/components/site/PageHero";
 import { FadeIn } from "@/components/site/FadeIn";
-import { whatWeDoCategories } from "@/lib/site-data";
+import { whatWeDoCategories, GALLERY_FILTER_QUERY_KEY } from "@/lib/site-data";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "What We Do",
   description:
-    "Custom manufacturing for retail, healthcare, hospitality, and trade — engineered casework, millwork, and fixtures with national delivery and project support.",
+    "Custom manufacturing for Hospitality, Healthcare, Retail, and Commercial Trade — including special projects — engineered casework, millwork, and fixtures with national delivery and project support.",
   path: "/millwork/what-we-do",
 });
 
@@ -17,7 +17,7 @@ export default function WhatWeDoPage() {
     <main id="main-content" className="flex-1">
       <PageHero
         title="What We Do"
-        description="Custom manufacturing solutions for retail, healthcare, hospitality, and trade environments."
+        description="Custom manufacturing solutions for Hospitality, Healthcare, Retail, and Commercial Trade environments, including special projects."
       />
       <section className="bg-tile-section-wash">
         <div className="container max-w-6xl py-20 md:py-24">
@@ -28,7 +28,7 @@ export default function WhatWeDoPage() {
               </h2>
             </FadeIn>
             <p className="mt-2 max-w-2xl font-display text-2xl font-medium leading-snug tracking-[-0.02em] text-foreground/95 sm:text-3xl">
-              Jump to a category
+              Browse the gallery by sector
             </p>
           </div>
           <ul
@@ -38,7 +38,7 @@ export default function WhatWeDoPage() {
             {whatWeDoCategories.map((c, i) => (
               <li key={c.id} className="h-full">
                 <IndustryTile
-                  href={`/millwork/what-we-do#${c.id}`}
+                  href={`/millwork/gallery?${GALLERY_FILTER_QUERY_KEY}=${c.id}`}
                   title={c.title}
                   index={i}
                   className="h-full w-full"

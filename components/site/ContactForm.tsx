@@ -138,6 +138,8 @@ function ContactFeedbackDialog({
 }
 
 export function ContactForm({ className }: ContactFormProps) {
+  const formStartedAtRef = useRef(Date.now());
+  const [honeypot, setHoneypot] = useState("");
   const [form, setForm] = useState<FormState>(initial);
   const [errors, setErrors] = useState<FieldError>({});
   const [sending, setSending] = useState(false);
@@ -163,6 +165,8 @@ export function ContactForm({ className }: ContactFormProps) {
       email: form.email.trim(),
       phone: form.phone.trim(),
       message: form.message.trim(),
+      websiteUrl: honeypot,
+      formStartedAt: formStartedAtRef.current,
     };
     try {
       const res = await fetch("/api/contact", {
@@ -191,6 +195,7 @@ export function ContactForm({ className }: ContactFormProps) {
         return;
       }
       setForm(initial);
+      setHoneypot("");
       setFeedback({
         type: "success",
         message:
@@ -387,6 +392,23 @@ export function ContactForm({ className }: ContactFormProps) {
               {errors.message}
             </p>
           ) : null}
+        </div>
+        <div
+          className="pointer-events-none absolute -left-[9999px] top-auto h-0 w-0 overflow-hidden opacity-0"
+          aria-hidden="true"
+        >
+          <label htmlFor="contact-company-website">Company website</label>
+          <input
+            id="contact-company-website"
+            name="companyWebsite"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => {
+              setHoneypot(e.target.value);
+            }}
+          />
         </div>
         <div className="flex flex-wrap items-center gap-4">
           <Button

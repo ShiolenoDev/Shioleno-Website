@@ -157,7 +157,8 @@ export default function AboutPage () {
               <p className="mt-6 text-base leading-[1.8] text-muted-foreground sm:text-lg">
                 Shioleno Industries is a precision-focused manufacturing partner
                 specializing in custom casework, millwork and fixtures for
-                hospitality, commercial retail/trade and healthcare environments.
+                hospitality, healthcare, retail, and commercial trade
+                environments, including special projects.
               </p>
               <p className="mt-6 text-base leading-[1.8] text-muted-foreground sm:text-lg">
                 With decades of experience, we combine engineering expertise,

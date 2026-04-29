@@ -19,9 +19,9 @@ import { Button } from '@/components/ui/button'
 const tabs: { id: GalleryCategory | 'all'; label: string }[] = [
   { id: 'all', label: 'All' },
   { id: 'hospitality', label: 'Hospitality' },
-  { id: 'retail', label: 'Retail' },
   { id: 'healthcare', label: 'Healthcare' },
-  { id: 'trade', label: 'Trade' }
+  { id: 'retail', label: 'Retail' },
+  { id: 'trade', label: 'Commercial Trade' }
 ]
 
 type GalleryGridProps = {
