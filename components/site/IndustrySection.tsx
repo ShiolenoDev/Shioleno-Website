@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Images } from "lucide-react";
 import { CTASection } from "@/components/site/CTASection";
+import { FinancingInquiryDialog } from "@/components/site/FinancingInquiryDialog";
 import { FadeIn } from "@/components/site/FadeIn";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Button } from "@/components/ui/button";
@@ -38,20 +39,25 @@ export function IndustrySection({
               className="mb-0 min-w-0 flex-1"
               id={`${category.id}-heading`}
             />
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="w-full min-w-0 shrink-0 sm:min-w-[220px] sm:w-auto"
-            >
-              <Link
-                href={`/millwork/gallery?${GALLERY_FILTER_QUERY_KEY}=${category.id}`}
-                className="inline-flex items-center justify-center gap-2"
+            <div className="flex w-full min-w-0 shrink-0 flex-col gap-3 sm:w-auto sm:min-w-[220px] md:items-end">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="w-full min-w-0 sm:w-auto"
               >
-                <Images className="h-4 w-4 opacity-90" aria-hidden />
-                Go to gallery
-              </Link>
-            </Button>
+                <Link
+                  href={`/millwork/gallery?${GALLERY_FILTER_QUERY_KEY}=${category.id}`}
+                  className="inline-flex items-center justify-center gap-2"
+                >
+                  <Images className="h-4 w-4 opacity-90" aria-hidden />
+                  Go to gallery
+                </Link>
+              </Button>
+              {category.id === "hospitality" ? (
+                <FinancingInquiryDialog />
+              ) : null}
+            </div>
           </div>
         </FadeIn>
         <FadeIn className="mt-2">

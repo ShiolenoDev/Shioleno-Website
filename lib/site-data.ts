@@ -149,8 +149,8 @@ export const whatWeDoCategories: WhatWeDoCategory[] = [
         alt: "Trade showroom service counter, industrial sales, and point-of-purchase line.",
       },
       {
-        src: "/images/gallery/trade/industrial-trade-checkout-counter.png",
-        alt: "Industrial trade checkout counter, customer line, and service desk.",
+        src: "/images/gallery/trade/trade-sales-floor-refreshment-center.jpg",
+        alt: "Sales floor refreshment center with service counter, cabinetry, and customer seating in a commercial trade environment.",
       },
       {
         src: "/images/gallery/trade/trade-desk-and-sales-area.png",
@@ -759,6 +759,63 @@ export const galleryItems: GalleryItem[] = [
     description:
       "Primary sales floor display for traffic zones and category blocks.",
     imageSrc: "/images/gallery/trade/trade-sales-floor-display.jpg",
+  },
+  {
+    id: "g-59",
+    category: "trade",
+    title: "Trade — Sales Counter",
+    description:
+      "Commercial trade sales counter with durable surfacing and integrated service workflow.",
+    imageSrc: "/images/gallery/trade/trade-sales-counter.jpeg",
+  },
+  {
+    id: "g-60",
+    category: "trade",
+    title: "Trade — Printer Stand",
+    description:
+      "Compact printer stand and equipment zone for trade floor and back-office support.",
+    imageSrc: "/images/gallery/trade/trade-printer-stand.jpeg",
+  },
+  {
+    id: "g-61",
+    category: "trade",
+    title: "Trade — Breakroom",
+    description:
+      "Employee breakroom millwork, storage, and durable finishes for trade facilities.",
+    imageSrc: "/images/gallery/trade/trade-breakroom.jpg",
+  },
+  {
+    id: "g-62",
+    category: "trade",
+    title: "Trade — Refreshment Area",
+    description:
+      "Customer and team refreshment area with casework and serving surfaces.",
+    imageSrc: "/images/gallery/trade/trade-refreshment-area.jpeg",
+  },
+  {
+    id: "g-63",
+    category: "trade",
+    title: "Trade — Shipping Desk",
+    description:
+      "Shipping and receiving desk with workflow-ready surfaces and support storage.",
+    imageSrc: "/images/gallery/trade/trade-shipping-desk.jpg",
+  },
+  {
+    id: "g-64",
+    category: "trade",
+    title: "Trade — Breakroom Counter Seating",
+    description:
+      "Breakroom counter with seating, storage, and integrated millwork package.",
+    imageSrc: "/images/gallery/trade/trade-breakroom-counter-seating.png",
+  },
+  {
+    id: "g-65",
+    category: "trade",
+    title: "Trade — Sales Floor Refreshment Center",
+    description:
+      "Sales floor refreshment and service center for showroom traffic and hospitality.",
+    imageSrc:
+      "/images/gallery/trade/trade-sales-floor-refreshment-center.jpg",
   },
 ];
 
