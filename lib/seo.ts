@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
-import { contactInfo } from '@/lib/site-data'
+import { contactInfo, millworkEmails } from '@/lib/site-data'
 
 /** Canonical site origin, no trailing slash (for building URLs) */
 export function getSiteOrigin (): string {
@@ -131,7 +131,7 @@ function organizationNode () {
     url: base,
     logo: absoluteUrl('/images/shioleno_full.svg'),
     image: absoluteUrl('/images/shioleno_full.svg'),
-    email: contactInfo.email,
+    email: millworkEmails.info,
     telephone: '+1-817-557-9365',
     address: {
       '@type': 'PostalAddress' as const,

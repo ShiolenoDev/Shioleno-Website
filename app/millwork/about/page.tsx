@@ -27,10 +27,10 @@ const aboutEngineeredDurabilityImages: Array<{
     height: 424,
   },
   {
-    src: "/images/about-engineered-durability-2.png",
+    src: "/images/about-engineered-durability-2.JPG",
     alt: "A large-scale automated CNC or panel machine with an overhead dust-collection system on a factory floor.",
-    width: 678,
-    height: 454,
+    width: 2272,
+    height: 1704,
   },
   {
     src: "/images/about-engineered-durability-3.png",
@@ -39,16 +39,16 @@ const aboutEngineeredDurabilityImages: Array<{
     height: 600,
   },
   {
-    src: "/images/about-engineered-durability-4.png",
+    src: "/images/about-engineered-durability-4.JPG",
     alt: "A HOMAG industrial machine processing wood panels, surrounded by wire safety fencing, in a clean warehouse.",
-    width: 660,
-    height: 422,
+    width: 2272,
+    height: 1704,
   },
   {
-    src: "/images/about-engineered-durability-5.png",
+    src: "/images/about-engineered-durability-5.JPG",
     alt: "CNC woodworking center in operation, with a control console, vacuum hoses, and team members on the production floor.",
-    width: 656,
-    height: 460,
+    width: 2272,
+    height: 1704,
   },
 ];
 
@@ -62,11 +62,11 @@ const aboutEngineeredForDurabilityFirstImage: {
   width: number;
   height: number;
 } = {
-  src: "/images/about-engineered-durability-1.png",
+  src: "/images/about-engineered-durability-1.JPG",
   alt:
     "High-angle view of a manufacturing plant floor with large processing equipment, overhead ductwork, red structural steel, and industrial lighting.",
-  width: 684,
-  height: 424,
+  width: 2272,
+  height: 1704,
 };
 const aboutEngineeredDurabilityOnlyImages = [
   aboutEngineeredForDurabilityFirstImage,

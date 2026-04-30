@@ -1,6 +1,6 @@
 import { PageHero } from "@/components/site/PageHero";
 import { ContactForm } from "@/components/site/ContactForm";
-import { contactInfo } from "@/lib/site-data";
+import { contactInfo, millworkEmails } from "@/lib/site-data";
 import { FadeIn } from "@/components/site/FadeIn";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -46,9 +46,9 @@ export default function ContactPage() {
                 <p>
                   <a
                     className="text-foreground/90 transition-colors duration-500 hover:text-primary"
-                    href={`mailto:${contactInfo.email}`}
+                    href={`mailto:${millworkEmails.sales}`}
                   >
-                    {contactInfo.email}
+                    {millworkEmails.sales}
                   </a>
                 </p>
                 <p className="mt-1 text-sm">

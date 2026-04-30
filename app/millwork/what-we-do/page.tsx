@@ -2,7 +2,7 @@ import { IndustrySection } from "@/components/site/IndustrySection";
 import { IndustryTile } from "@/components/site/IndustryTile";
 import { PageHero } from "@/components/site/PageHero";
 import { FadeIn } from "@/components/site/FadeIn";
-import { whatWeDoCategories, GALLERY_FILTER_QUERY_KEY } from "@/lib/site-data";
+import { whatWeDoCategories } from "@/lib/site-data";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -28,7 +28,7 @@ export default function WhatWeDoPage() {
               </h2>
             </FadeIn>
             <p className="mt-2 max-w-2xl font-display text-2xl font-medium leading-snug tracking-[-0.02em] text-foreground/95 sm:text-3xl">
-              Browse the gallery by sector
+              Jump to category
             </p>
           </div>
           <ul
@@ -38,7 +38,7 @@ export default function WhatWeDoPage() {
             {whatWeDoCategories.map((c, i) => (
               <li key={c.id} className="h-full">
                 <IndustryTile
-                  href={`/millwork/gallery?${GALLERY_FILTER_QUERY_KEY}=${c.id}`}
+                  href={`/millwork/what-we-do#${c.id}`}
                   title={c.title}
                   index={i}
                   className="h-full w-full"

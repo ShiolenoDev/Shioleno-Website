@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/site/FadeIn";
+import { WhatWeDoHashLink } from "@/components/site/WhatWeDoHashLink";
 
 type IndustryTileProps = {
   href: string;
@@ -22,9 +22,9 @@ export function IndustryTile({
 
   return (
     <FadeIn delayMs={index * 80} className="h-full">
-      <Link
+      <WhatWeDoHashLink
         href={href}
-        aria-label={`${title}: open gallery filtered to this sector`}
+        aria-label={`${title}: jump to details on this page`}
         className={cn(
           "group relative flex h-full min-h-[200px] flex-col justify-end overflow-hidden border border-border/60 shadow-sm",
           "transition duration-500 ease-out hover:border-border hover:shadow-md",
@@ -61,7 +61,7 @@ export function IndustryTile({
             {title}
           </span>
           <span className="mt-3 inline-flex items-center text-sm font-medium text-foreground/95">
-            Open gallery
+            View details
             <span
               className="ml-2 text-primary transition duration-500 group-hover:translate-x-0.5"
               aria-hidden
@@ -70,7 +70,7 @@ export function IndustryTile({
             </span>
           </span>
         </div>
-      </Link>
+      </WhatWeDoHashLink>
     </FadeIn>
   );
 }

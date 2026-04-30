@@ -10,7 +10,7 @@ import {
   tryConsumeRateLimit,
 } from "@/lib/contact-spam-guards"
 import { absoluteUrl, getSiteOrigin } from "@/lib/seo"
-import { contactInfo } from "@/lib/site-data"
+import { millworkEmails } from "@/lib/site-data"
 
 export const runtime = "nodejs"
 
@@ -110,7 +110,7 @@ export async function POST (request: Request) {
   }
 
   const resendKey = process.env.RESEND_API_KEY
-  const to = process.env.CONTACT_TO_EMAIL || contactInfo.email
+  const to = process.env.CONTACT_TO_EMAIL || millworkEmails.sales
   const from = process.env.CONTACT_FROM_EMAIL
   const canSend = Boolean(resendKey && to && from)
 

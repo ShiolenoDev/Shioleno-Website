@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { PageHero } from '@/components/site/PageHero'
+import { millworkEmails } from '@/lib/site-data'
 import { buildPageMetadata } from '@/lib/seo'
 
 export const metadata = buildPageMetadata({
@@ -135,9 +136,9 @@ export default function TermsOfUsePage () {
               <p className={bodyClass}>
                 <a
                   className="text-primary underline-offset-2 transition-colors hover:underline"
-                  href="mailto:info@shiolenomillwork.com"
+                  href={`mailto:${millworkEmails.info}`}
                 >
-                  info@shiolenomillwork.com
+                  {millworkEmails.info}
                 </a>
               </p>
             </section>
