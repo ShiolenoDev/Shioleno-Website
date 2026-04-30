@@ -489,26 +489,17 @@ export const galleryItems: GalleryItem[] = [
     title: "Retail — Media and Slatwall Panel",
     description:
       "Digital or graphic media zone with slatwall-compatible surround.",
-    imageSrc:
-      "/images/gallery/retail/retail-media-display-slatwall-panel.jpg",
+    imageSrc: "/images/gallery/retail/retail-media-display-slatwall-panel.jpg",
   },
   {
     id: "g-26",
-    category: "retail",
-    title: "Retail — Storage Display and Backwrap",
-    description:
-      "Sales floor storage, backwrap, and display integration in one run.",
-    imageSrc: "/images/gallery/retail/retail-storage-display-backwrap.png",
-  },
-  {
-    id: "g-27",
     category: "healthcare",
     title: "Medical Back Office — Clinic",
     description: "Clinic back office millwork and support spaces.",
     imageSrc: "/images/gallery/healthcare/arista-advanced-pet-care-clinic.jpg",
   },
   {
-    id: "g-28",
+    id: "g-27",
     category: "healthcare",
     title: "Medical Back Office — Clinic",
     description:
@@ -517,21 +508,21 @@ export const galleryItems: GalleryItem[] = [
       "/images/gallery/healthcare/arista-advanced-pet-care-clinic-2.jpg",
   },
   {
-    id: "g-29",
+    id: "g-28",
     category: "healthcare",
     title: "Medical - Exam Room",
     description: "Exam room casework and clinical millwork support.",
     imageSrc: "/images/gallery/healthcare/medical-exam-room-casework.png",
   },
   {
-    id: "g-30",
+    id: "g-29",
     category: "healthcare",
     title: "Medical Office — Reception Desk",
     description: "Healthcare reception desk, waiting, and public circulation.",
     imageSrc: "/images/gallery/healthcare/medical-office-reception-desk.png",
   },
   {
-    id: "g-31",
+    id: "g-30",
     category: "healthcare",
     title: "Medical — Nurse Station and Casework",
     description:
@@ -539,7 +530,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/healthcare/hta-cabinets-nurse-station.jpg",
   },
   {
-    id: "g-32",
+    id: "g-31",
     category: "healthcare",
     title: "Medical — Hallway and Reception",
     description:
@@ -547,7 +538,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/healthcare/hta-hallway-reception.jpg",
   },
   {
-    id: "g-33",
+    id: "g-32",
     category: "trade",
     title: "Industrial Trade — Checkout Counter",
     description:
@@ -555,14 +546,14 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/industrial-trade-checkout-counter.png",
   },
   {
-    id: "g-34",
+    id: "g-33",
     category: "trade",
     title: "Trade — Desk and Sales Area",
     description: "Trade center sales environment with primary service desk.",
     imageSrc: "/images/gallery/trade/trade-desk-and-sales-area.png",
   },
   {
-    id: "g-35",
+    id: "g-34",
     category: "trade",
     title: "Trade — Service Counter",
     description:
@@ -570,23 +561,16 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-showroom-service-counter.png",
   },
   {
-    id: "g-36",
+    id: "g-35",
     category: "trade",
     title: "Trade — Architectural Door Surround",
     description:
       "Commercial trade millwork and surround detailing at door openings.",
     imageSrc: "/images/gallery/trade/trade-architectural-door-surround.png",
   },
+
   {
-    id: "g-37",
-    category: "trade",
-    title: "Trade — Bin Display",
-    description:
-      "Sales-floor bin merchandising for bulk product and high-volume SKUs.",
-    imageSrc: "/images/gallery/trade/trade-bin-display.jpg",
-  },
-  {
-    id: "g-38",
+    id: "g-36",
     category: "trade",
     title: "Trade — Commercial Gondola",
     description:
@@ -594,14 +578,14 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-commercial-gondola.jpg",
   },
   {
-    id: "g-39",
+    id: "g-37",
     category: "trade",
     title: "Trade — Display Shelf Unit",
     description: "Freestanding shelf unit for parts, samples, and merchandise.",
     imageSrc: "/images/gallery/trade/trade-display-shelf-unit.jpg",
   },
   {
-    id: "g-40",
+    id: "g-38",
     category: "trade",
     title: "Trade — Entertainment Display",
     description:
@@ -609,23 +593,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-entertainment-display.png",
   },
   {
-    id: "g-41",
-    category: "trade",
-    title: "Trade — Eyewear Retail Display",
-    description:
-      "Eyewear fixture package with frame presentation and service adjacency.",
-    imageSrc: "/images/gallery/trade/trade-eyewear-retail-display.jpg",
-  },
-  {
-    id: "g-42",
-    category: "trade",
-    title: "Trade — Eyewear Unit",
-    description:
-      "Compact eyewear merchandising unit for trade and showroom environments.",
-    imageSrc: "/images/gallery/trade/trade-eyewear-unit.jpg",
-  },
-  {
-    id: "g-43",
+    id: "g-39",
     category: "trade",
     title: "Trade — Eyewear Display System",
     description:
@@ -633,7 +601,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-eyewear-unit-render.png",
   },
   {
-    id: "g-44",
+    id: "g-40",
     category: "trade",
     title: "Trade — Integrated Checkout and Merchandising Counter",
     description:
@@ -641,25 +609,17 @@ export const galleryItems: GalleryItem[] = [
     imageSrc:
       "/images/gallery/trade/trade-integrated-checkout-merchandising-counter.png",
   },
+
   {
-    id: "g-45",
-    category: "trade",
-    title: "Trade — Media and Slatwall Panel",
-    description:
-      "Media-forward slatwall panel for digital content and flexible fixturing.",
-    imageSrc: "/images/gallery/trade/trade-media-display-slatwall-panel.jpg",
-  },
-  {
-    id: "g-46",
+    id: "g-41",
     category: "trade",
     title: "Trade — Modular Divider Display System",
     description:
       "Modular dividers that segment space while supporting product presentation.",
-    imageSrc:
-      "/images/gallery/trade/trade-modular-divider-display-system.jpg",
+    imageSrc: "/images/gallery/trade/trade-modular-divider-display-system.jpg",
   },
   {
-    id: "g-47",
+    id: "g-42",
     category: "trade",
     title: "Trade — Point of Sale and Glass Display Cases",
     description:
@@ -668,7 +628,7 @@ export const galleryItems: GalleryItem[] = [
       "/images/gallery/trade/trade-point-of-sale-glass-display-cases.png",
   },
   {
-    id: "g-48",
+    id: "g-43",
     category: "trade",
     title: "Trade — Sales Floor Kiosk",
     description:
@@ -676,7 +636,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-sales-floor-kiosk.jpg",
   },
   {
-    id: "g-49",
+    id: "g-44",
     category: "trade",
     title: "Trade — Showroom Checkout Center",
     description:
@@ -684,7 +644,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-showroom-checkout-center.png",
   },
   {
-    id: "g-50",
+    id: "g-45",
     category: "trade",
     title: "Trade — Showroom Informational Desk",
     description:
@@ -692,30 +652,24 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-showroom-informational-desk.png",
   },
   {
-    id: "g-51",
+    id: "g-46",
     category: "trade",
     title: "Trade — Slatwall Display Tower",
-    description: "Vertical slatwall tower for dense merchandising in a small footprint.",
+    description:
+      "Vertical slatwall tower for dense merchandising in a small footprint.",
     imageSrc: "/images/gallery/trade/trade-slatwall-display-tower.jpg",
   },
   {
-    id: "g-52",
+    id: "g-47",
     category: "trade",
     title: "Trade — Slatwall Display",
     description:
       "Slatwall-based merchandising wall with accessory hooks and shelves.",
     imageSrc: "/images/gallery/trade/trade-slatwall-display.png",
   },
+
   {
-    id: "g-53",
-    category: "trade",
-    title: "Trade — Specialty Display",
-    description:
-      "Specialty fixture for focused categories and showroom storytelling.",
-    imageSrc: "/images/gallery/trade/trade-specialty-display.jpg",
-  },
-  {
-    id: "g-54",
+    id: "g-48",
     category: "trade",
     title: "Trade — Storage Display and Backwrap",
     description:
@@ -723,7 +677,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-storage-display-backwrap.png",
   },
   {
-    id: "g-55",
+    id: "g-49",
     category: "trade",
     title: "Trade — Styling Consultation Station",
     description:
@@ -731,7 +685,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-styling-consultation-station.png",
   },
   {
-    id: "g-56",
+    id: "g-50",
     category: "trade",
     title: "Trade — Tiered Merchandising Display Table",
     description:
@@ -740,23 +694,16 @@ export const galleryItems: GalleryItem[] = [
       "/images/gallery/trade/trade-tiered-merchandising-display-table.png",
   },
   {
-    id: "g-57",
+    id: "g-51",
     category: "trade",
     title: "Trade — Trade Show Display",
     description:
       "Portable-style trade show display system for events and demonstrations.",
     imageSrc: "/images/gallery/trade/trade-trade-show-display.png",
   },
+
   {
-    id: "g-58",
-    category: "trade",
-    title: "Trade — Wall Panels",
-    description:
-      "Architectural wall panels for finish, acoustics, and brand surfaces.",
-    imageSrc: "/images/gallery/trade/trade-wall-panels.jpg",
-  },
-  {
-    id: "g-59",
+    id: "g-52",
     category: "trade",
     title: "Trade — Writing Station with Literature Holder",
     description:
@@ -765,7 +712,7 @@ export const galleryItems: GalleryItem[] = [
       "/images/gallery/trade/trade-writing-station-literature-holder.jpg",
   },
   {
-    id: "g-60",
+    id: "g-53",
     category: "trade",
     title: "Trade — Architectural Display Units",
     description:
@@ -773,7 +720,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-architectural-display-units.png",
   },
   {
-    id: "g-61",
+    id: "g-54",
     category: "trade",
     title: "Trade — Corporate Reception Desk",
     description:
@@ -781,7 +728,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-corporate-reception-desk.jpg",
   },
   {
-    id: "g-62",
+    id: "g-55",
     category: "trade",
     title: "Trade — Display Cabinets",
     description:
@@ -789,7 +736,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-display-cabinets.png",
   },
   {
-    id: "g-63",
+    id: "g-56",
     category: "trade",
     title: "Trade — Multifunction Modular Counter System",
     description:
@@ -798,7 +745,7 @@ export const galleryItems: GalleryItem[] = [
       "/images/gallery/trade/trade-multifunction-modular-counter-system.png",
   },
   {
-    id: "g-64",
+    id: "g-57",
     category: "trade",
     title: "Trade — Pedestal Displays",
     description:
@@ -806,7 +753,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-pedestal-displays.png",
   },
   {
-    id: "g-65",
+    id: "g-58",
     category: "trade",
     title: "Trade — Sales Floor Display",
     description:
