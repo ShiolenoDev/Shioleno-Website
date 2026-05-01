@@ -23,13 +23,13 @@ export const siteConfig = {
   mainNav: [],
   descriptions: {},
   metal: {
-    phone: "(817) 465 9361",
+    phone: "(817) 465-9361",
     fax: "(817) 465-9364",
     email: "sii2013@hotmail.com",
     contact: "Anthony Shioleno",
   },
   wood: {
-    phone: "(817) 557 9365",
+    phone: "(817) 557-9365",
     fax: "(817) 557-9495 ",
     email: "shioleno@swbell.net",
     contact: "Chris Shioleno",

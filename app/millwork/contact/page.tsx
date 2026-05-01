@@ -38,7 +38,7 @@ export default function ContactPage() {
                 <p className="mt-5">
                   <a
                     className="text-foreground/95 transition-colors duration-500 hover:text-primary"
-                    href={`tel:${contactInfo.phone.replace(/-/g, "")}`}
+                    href={`tel:${contactInfo.phone}`}
                   >
                     {contactInfo.phoneDisplay}
                   </a>

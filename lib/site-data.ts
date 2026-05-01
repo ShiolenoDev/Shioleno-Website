@@ -428,14 +428,6 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "g-18",
     category: "retail",
-    title: "Retail — Bin Display",
-    description:
-      "Floor merchandising with bin-style display and integrated casework.",
-    imageSrc: "/images/gallery/retail/retail-bin-display.jpg",
-  },
-  {
-    id: "g-19",
-    category: "retail",
     title: "Retail — Cashwrap with Slatwall Shelving",
     description:
       "Checkout run with integrated slatwall shelving for impulse and accessories.",
@@ -443,12 +435,21 @@ export const galleryItems: GalleryItem[] = [
       "/images/gallery/retail/retail-cashwrap-integrated-slatwall-shelves.png",
   },
   {
-    id: "g-20",
+    id: "g-19",
     category: "retail",
     title: "Retail — Designer Cashwrap Finish",
     description:
       "High-finish cashwrap with durable surfacing and brand-forward detailing.",
     imageSrc: "/images/gallery/retail/retail-cashwrap-designer-finish.png",
+  },
+  {
+    id: "g-20",
+    category: "retail",
+    title: "Retail — Styling Consultation Station",
+    description:
+      "Consultation bar and workspace for assisted styling and appointments.",
+    imageSrc:
+      "/images/gallery/trade/trade-styling-consultation-station.png",
   },
   {
     id: "g-21",
@@ -486,10 +487,10 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "g-25",
     category: "retail",
-    title: "Retail — Media and Slatwall Panel",
+    title: "Retail — Eyewear Display System",
     description:
-      "Digital or graphic media zone with slatwall-compatible surround.",
-    imageSrc: "/images/gallery/retail/retail-media-display-slatwall-panel.jpg",
+      "Full-height eyewear display with integrated lighting and storage.",
+    imageSrc: "/images/gallery/trade/trade-eyewear-unit-render.png",
   },
   {
     id: "g-26",
@@ -540,7 +541,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "g-32",
     category: "trade",
-    title: "Industrial Trade — Checkout Counter",
+    title: "Industrial — Checkout Counter",
     description:
       "Trade and industrial service counter and customer checkout line.",
     imageSrc: "/images/gallery/trade/industrial-trade-checkout-counter.png",
@@ -548,20 +549,77 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "g-33",
     category: "trade",
-    title: "Trade — Desk and Sales Area",
+    title: "Industrial — Desk and Sales Area",
     description: "Trade center sales environment with primary service desk.",
     imageSrc: "/images/gallery/trade/trade-desk-and-sales-area.png",
   },
   {
     id: "g-34",
     category: "trade",
-    title: "Trade — Service Counter",
+    title: "Industrial — Service Counter",
     description:
       "Showroom and trade counter for industrial and trade customers.",
     imageSrc: "/images/gallery/trade/trade-showroom-service-counter.png",
   },
   {
     id: "g-35",
+    category: "trade",
+    title: "Industrial — Sales Counter",
+    description:
+      "Commercial trade sales counter with durable surfacing and integrated service workflow.",
+    imageSrc: "/images/gallery/trade/trade-sales-counter.jpeg",
+  },
+  {
+    id: "g-36",
+    category: "trade",
+    title: "Industrial — Printer Stand",
+    description:
+      "Compact printer stand and equipment zone for trade floor and back-office support.",
+    imageSrc: "/images/gallery/trade/trade-printer-stand.jpeg",
+  },
+  {
+    id: "g-37",
+    category: "trade",
+    title: "Industrial — Breakroom",
+    description:
+      "Employee breakroom millwork, storage, and durable finishes for trade facilities.",
+    imageSrc: "/images/gallery/trade/trade-breakroom.jpg",
+  },
+  {
+    id: "g-38",
+    category: "trade",
+    title: "Industrial — Refreshment Area",
+    description:
+      "Customer and team refreshment area with casework and serving surfaces.",
+    imageSrc: "/images/gallery/trade/trade-refreshment-area.jpeg",
+  },
+  {
+    id: "g-39",
+    category: "trade",
+    title: "Industrial — Shipping Desk",
+    description:
+      "Shipping and receiving desk with workflow-ready surfaces and support storage.",
+    imageSrc: "/images/gallery/trade/trade-shipping-desk.jpg",
+  },
+  {
+    id: "g-40",
+    category: "trade",
+    title: "Industrial — Breakroom Counter Seating",
+    description:
+      "Breakroom counter with seating, storage, and integrated millwork package.",
+    imageSrc: "/images/gallery/trade/trade-breakroom-counter-seating.png",
+  },
+  {
+    id: "g-41",
+    category: "trade",
+    title: "Industrial — Sales Floor Refreshment Center",
+    description:
+      "Sales floor refreshment and service center for showroom traffic and hospitality.",
+    imageSrc:
+      "/images/gallery/trade/trade-sales-floor-refreshment-center.jpg",
+  },
+  {
+    id: "g-42",
     category: "trade",
     title: "Trade — Architectural Door Surround",
     description:
@@ -570,7 +628,7 @@ export const galleryItems: GalleryItem[] = [
   },
 
   {
-    id: "g-36",
+    id: "g-43",
     category: "trade",
     title: "Trade — Commercial Gondola",
     description:
@@ -578,14 +636,14 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-commercial-gondola.jpg",
   },
   {
-    id: "g-37",
+    id: "g-44",
     category: "trade",
     title: "Trade — Display Shelf Unit",
     description: "Freestanding shelf unit for parts, samples, and merchandise.",
     imageSrc: "/images/gallery/trade/trade-display-shelf-unit.jpg",
   },
   {
-    id: "g-38",
+    id: "g-45",
     category: "trade",
     title: "Trade — Entertainment Display",
     description:
@@ -593,15 +651,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-entertainment-display.png",
   },
   {
-    id: "g-39",
-    category: "trade",
-    title: "Trade — Eyewear Display System",
-    description:
-      "Full-height eyewear display with integrated lighting and storage.",
-    imageSrc: "/images/gallery/trade/trade-eyewear-unit-render.png",
-  },
-  {
-    id: "g-40",
+    id: "g-46",
     category: "trade",
     title: "Trade — Integrated Checkout and Merchandising Counter",
     description:
@@ -611,15 +661,7 @@ export const galleryItems: GalleryItem[] = [
   },
 
   {
-    id: "g-41",
-    category: "trade",
-    title: "Trade — Modular Divider Display System",
-    description:
-      "Modular dividers that segment space while supporting product presentation.",
-    imageSrc: "/images/gallery/trade/trade-modular-divider-display-system.jpg",
-  },
-  {
-    id: "g-42",
+    id: "g-47",
     category: "trade",
     title: "Trade — Point of Sale and Glass Display Cases",
     description:
@@ -628,7 +670,7 @@ export const galleryItems: GalleryItem[] = [
       "/images/gallery/trade/trade-point-of-sale-glass-display-cases.png",
   },
   {
-    id: "g-43",
+    id: "g-48",
     category: "trade",
     title: "Trade — Sales Floor Kiosk",
     description:
@@ -636,7 +678,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-sales-floor-kiosk.jpg",
   },
   {
-    id: "g-44",
+    id: "g-49",
     category: "trade",
     title: "Trade — Showroom Checkout Center",
     description:
@@ -644,7 +686,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-showroom-checkout-center.png",
   },
   {
-    id: "g-45",
+    id: "g-50",
     category: "trade",
     title: "Trade — Showroom Informational Desk",
     description:
@@ -652,7 +694,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-showroom-informational-desk.png",
   },
   {
-    id: "g-46",
+    id: "g-51",
     category: "trade",
     title: "Trade — Slatwall Display Tower",
     description:
@@ -660,7 +702,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-slatwall-display-tower.jpg",
   },
   {
-    id: "g-47",
+    id: "g-52",
     category: "trade",
     title: "Trade — Slatwall Display",
     description:
@@ -669,7 +711,7 @@ export const galleryItems: GalleryItem[] = [
   },
 
   {
-    id: "g-48",
+    id: "g-53",
     category: "trade",
     title: "Trade — Storage Display and Backwrap",
     description:
@@ -677,15 +719,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-storage-display-backwrap.png",
   },
   {
-    id: "g-49",
-    category: "trade",
-    title: "Trade — Styling Consultation Station",
-    description:
-      "Consultation bar and workspace for assisted styling and appointments.",
-    imageSrc: "/images/gallery/trade/trade-styling-consultation-station.png",
-  },
-  {
-    id: "g-50",
+    id: "g-54",
     category: "trade",
     title: "Trade — Tiered Merchandising Display Table",
     description:
@@ -694,7 +728,7 @@ export const galleryItems: GalleryItem[] = [
       "/images/gallery/trade/trade-tiered-merchandising-display-table.png",
   },
   {
-    id: "g-51",
+    id: "g-55",
     category: "trade",
     title: "Trade — Trade Show Display",
     description:
@@ -703,7 +737,7 @@ export const galleryItems: GalleryItem[] = [
   },
 
   {
-    id: "g-52",
+    id: "g-56",
     category: "trade",
     title: "Trade — Writing Station with Literature Holder",
     description:
@@ -712,7 +746,7 @@ export const galleryItems: GalleryItem[] = [
       "/images/gallery/trade/trade-writing-station-literature-holder.jpg",
   },
   {
-    id: "g-53",
+    id: "g-57",
     category: "trade",
     title: "Trade — Architectural Display Units",
     description:
@@ -720,7 +754,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-architectural-display-units.png",
   },
   {
-    id: "g-54",
+    id: "g-58",
     category: "trade",
     title: "Trade — Corporate Reception Desk",
     description:
@@ -728,7 +762,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-corporate-reception-desk.jpg",
   },
   {
-    id: "g-55",
+    id: "g-59",
     category: "trade",
     title: "Trade — Display Cabinets",
     description:
@@ -736,7 +770,7 @@ export const galleryItems: GalleryItem[] = [
     imageSrc: "/images/gallery/trade/trade-display-cabinets.png",
   },
   {
-    id: "g-56",
+    id: "g-60",
     category: "trade",
     title: "Trade — Multifunction Modular Counter System",
     description:
@@ -745,77 +779,12 @@ export const galleryItems: GalleryItem[] = [
       "/images/gallery/trade/trade-multifunction-modular-counter-system.png",
   },
   {
-    id: "g-57",
-    category: "trade",
-    title: "Trade — Pedestal Displays",
-    description:
-      "Pedestal platforms for hero products and showroom focal points.",
-    imageSrc: "/images/gallery/trade/trade-pedestal-displays.png",
-  },
-  {
-    id: "g-58",
+    id: "g-61",
     category: "trade",
     title: "Trade — Sales Floor Display",
     description:
       "Primary sales floor display for traffic zones and category blocks.",
     imageSrc: "/images/gallery/trade/trade-sales-floor-display.jpg",
-  },
-  {
-    id: "g-59",
-    category: "trade",
-    title: "Trade — Sales Counter",
-    description:
-      "Commercial trade sales counter with durable surfacing and integrated service workflow.",
-    imageSrc: "/images/gallery/trade/trade-sales-counter.jpeg",
-  },
-  {
-    id: "g-60",
-    category: "trade",
-    title: "Trade — Printer Stand",
-    description:
-      "Compact printer stand and equipment zone for trade floor and back-office support.",
-    imageSrc: "/images/gallery/trade/trade-printer-stand.jpeg",
-  },
-  {
-    id: "g-61",
-    category: "trade",
-    title: "Trade — Breakroom",
-    description:
-      "Employee breakroom millwork, storage, and durable finishes for trade facilities.",
-    imageSrc: "/images/gallery/trade/trade-breakroom.jpg",
-  },
-  {
-    id: "g-62",
-    category: "trade",
-    title: "Trade — Refreshment Area",
-    description:
-      "Customer and team refreshment area with casework and serving surfaces.",
-    imageSrc: "/images/gallery/trade/trade-refreshment-area.jpeg",
-  },
-  {
-    id: "g-63",
-    category: "trade",
-    title: "Trade — Shipping Desk",
-    description:
-      "Shipping and receiving desk with workflow-ready surfaces and support storage.",
-    imageSrc: "/images/gallery/trade/trade-shipping-desk.jpg",
-  },
-  {
-    id: "g-64",
-    category: "trade",
-    title: "Trade — Breakroom Counter Seating",
-    description:
-      "Breakroom counter with seating, storage, and integrated millwork package.",
-    imageSrc: "/images/gallery/trade/trade-breakroom-counter-seating.png",
-  },
-  {
-    id: "g-65",
-    category: "trade",
-    title: "Trade — Sales Floor Refreshment Center",
-    description:
-      "Sales floor refreshment and service center for showroom traffic and hospitality.",
-    imageSrc:
-      "/images/gallery/trade/trade-sales-floor-refreshment-center.jpg",
   },
 ];
 
@@ -838,8 +807,9 @@ export const contactInfo = {
   company: "Shioleno Industries, Inc.",
   addressLine1: "1715 Peyco Dr North",
   cityStateZip: "Arlington, TX 76001",
-  phone: "817-557-9365",
-  phoneDisplay: "817-557-9365",
+  /** Digits only — use in `tel:` links */
+  phone: "8175579365",
+  phoneDisplay: "(817) 557-9365",
   email: millworkEmails.sales,
   website: "https://www.shiolenoindustries.com",
   websiteDisplay: "www.shiolenoindustries.com",
@@ -903,7 +873,7 @@ export const splitLandingDepartments: [
     title: "Millwork fabrication",
     href: "/millwork",
     phoneTel: "8175579365",
-    phoneDisplay: "(817) 557 9365",
+    phoneDisplay: "(817) 557-9365",
     email: millworkEmails.info,
   },
   {
@@ -911,7 +881,7 @@ export const splitLandingDepartments: [
     title: "Metal fabrication",
     href: "/metal",
     phoneTel: "8174659361",
-    phoneDisplay: "(817) 465 9361",
+    phoneDisplay: "(817) 465-9361",
     email: "sii2013@hotmail.com",
   },
 ];
