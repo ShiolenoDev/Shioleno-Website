@@ -57,9 +57,9 @@ function buildEmailBody (p: {
 }
 
 /**
- * Set RESEND_API_KEY, CONTACT_TO_EMAIL, and CONTACT_FROM_EMAIL in .env.local.
- * For a quick Resend test, set CONTACT_FROM_EMAIL to onboarding@resend.dev and
- * CONTACT_TO_EMAIL to the address you use to sign in at resend.com.
+ * Env: RESEND_API_KEY, CONTACT_FROM_EMAIL (verified-domain sender), CONTACT_TO_EMAIL (inbox).
+ * CONTACT_TO_EMAIL defaults to millworkEmails.sales (sales@shiolenomillwork.com) when unset.
+ * Dev-only tests: onboarding@resend.dev + your personal inbox as CONTACT_TO_EMAIL.
  */
 export async function POST (request: Request) {
   let body: Partial<ContactPayload>
