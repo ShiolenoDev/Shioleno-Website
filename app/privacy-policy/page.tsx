@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage () {
       <PageHero
         asTitle="h1"
         title="Privacy Policy"
-        description="Effective date: [Insert Date]"
+        description="Effective date: May 1, 2026"
       />
       <section className="bg-background">
         <div className="container max-w-3xl py-16 md:py-24">
